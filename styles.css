@@ -1,27 +1,31 @@
 /* ==========================================================================
-   1. VARIABLES DE ESTILO EDITORIAL
+   1. CORE / VARIABLES & DESIGN SYSTEM
    ========================================================================== */
 :root {
+    /* Paleta Corporativa (Modo Claro Premium) */
     --bg-color: #fcfbf9;        /* Blanco cálido/hueso de alta gama */
     --text-main: #1c1d1f;       /* Negro carbón suave, elegante */
     --text-muted: #56595f;      /* Gris sofisticado para detalles */
     --accent-color: #1a365d;    /* Azul marino ejecutivo profundo */
     --border-subtle: #e4e4e7;   /* Gris ultra claro para separadores */
+    --bg-tag: #ffffff;          /* Fondo base para componentes aislados */
     
-    /* Tipografías con contraste */
+    /* Tipografías con Contraste Editorial */
     --font-display: "Georgia", serif;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Variables del Modo Oscuro (Mapeadas de forma nativa) */
 body.dark-mode {
+    /* Paleta Corporativa (Modo Oscuro) */
     --bg-color: #0f172a;       /* Fondo azul oscuro profundo */
     --text-main: #f8fafc;      /* Texto casi blanco */
     --text-muted: #94a3b8;     /* Gris claro para detalles */
     --accent-color: #38bdf8;   /* Azul cielo brillante para acentos */
     --border-subtle: #334155;  /* Separadores oscuros */
+    --bg-tag: #1e293b;         /* Fondo adaptativo para tags en oscuro */
 }
 
+/* Reset Estructural y Semántico */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -38,14 +42,18 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+ul {
+    list-style: none; /* Eliminación global de viñetas nativas */
+}
+
 /* ==========================================================================
-   2. REGLA MAESTRA: LAYOUT ASIMÉTRICO (CSS GRID)
+   2. ESTRUCTURA GLOBAL / LAYOUT ASIMÉTRICO
    ========================================================================== */
 .cv-container {
     max-width: 1040px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr; /* 2 columnas: izquierda ancha, derecha angosta */
+    grid-template-columns: 2fr 1fr;
     gap: 4rem;
 }
 
@@ -67,8 +75,10 @@ h2 {
 }
 
 /* ==========================================================================
-   3. COLUMNA IZQUIERDA (HEADER Y EXPERIENCIA)
+   3. COMPONENTES DE LA SECCIÓN PRINCIPAL (IZQUIERDA)
    ========================================================================== */
+
+/* Encabezado Principal */
 .cv-header {
     display: flex;
     justify-content: space-between;
@@ -104,28 +114,7 @@ h2 {
     text-align: justify;
 }
 
-/* Botón de cambio de tema */
-.theme-btn {
-    background: none;
-    border: 1px solid var(--border-subtle);
-    padding: 0.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-}
-
-.theme-btn:hover {
-    background-color: var(--border-subtle);
-    transform: scale(1.05);
-}
-
-/* Componente Interactivo: Contenedor de Filtros de Tecnología */
+/* Controlador de Filtros Interactivos */
 .filter-container {
     display: flex;
     gap: 0.75rem;
@@ -152,10 +141,10 @@ h2 {
     border-color: var(--accent-color);
 }
 
-/* Tarjetas de Trabajo */
+/* Bloque de Experiencia Laboral (Tarjetas) */
 .job-card {
     margin-bottom: 2.5rem;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Necesario para el filtrado dinámico */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .job-header {
@@ -200,16 +189,11 @@ h2 {
     margin-bottom: 0.75rem;
 }
 
-/* Lista de logros elegante - CORREGIDA SIN RAYAS NI PUNTOS */
 .job-card ul {
-    list-style: none;
-    list-style-type: none;
     margin-top: 0.5rem;
 }
 
 .job-card ul li {
-    position: relative;
-    padding-left: 0; /* Limpieza completa de márgenes heredados */
     margin-bottom: 0.6rem;
     font-size: 0.98rem;
     color: var(--text-main);
@@ -217,18 +201,14 @@ h2 {
 }
 
 /* ==========================================================================
-   4. COLUMNA DERECHA (BARRA LATERAL / SIDEBAR)
+   4. COMPONENTES DE LA BARRA LATERAL (DERECHA)
    ========================================================================== */
 .sidebar-column {
     border-left: 1px solid var(--border-subtle);
     padding-left: 2rem;
 }
 
-/* Lista de Contacto */
-.contact-list {
-    list-style: none;
-}
-
+/* Información de Contacto */
 .contact-list li {
     display: flex;
     align-items: center;
@@ -249,12 +229,7 @@ h2 {
     border-bottom: 1px solid var(--accent-color);
 }
 
-.icon {
-    color: var(--accent-color);
-    font-size: 1rem;
-}
-
-/* Tarjeta Educación */
+/* Formación Académica */
 .education-card h3 {
     font-family: var(--font-display);
     font-size: 1.15rem;
@@ -273,7 +248,7 @@ h2 {
     color: var(--text-muted);
 }
 
-/* Tags de Habilidades (Clean & Corporate style) */
+/* Contenedor Global de Habilidades Profesionales */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -281,8 +256,7 @@ h2 {
 }
 
 .skill-tag {
-    background-color: transparent; /* Permite una transición adaptativa limpia */
-    background-color: rgba(255, 255, 255, 0.05); /* Sutil respaldo */
+    background-color: var(--bg-tag);
     color: var(--text-main);
     font-size: 0.85rem;
     font-weight: 500;
@@ -292,18 +266,57 @@ h2 {
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Sobreescritura específica para el fondo de los tags en Modo Claro */
-body:not(.dark-mode) .skill-tag {
-    background-color: #ffffff; 
+/* ==========================================================================
+   5. UI UTILITIES / ELEMENTOS DE INTERFAZ AGRÓSTICOS
+   ========================================================================== */
+
+/* Gestión de Iconos Vectoriales (Remix Icon) */
+.icon {
+    color: var(--accent-color);
+    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
 }
 
-body.dark-mode .skill-tag {
-    background-color: #1e293b; 
+/* Botón Conmutador de Temas Visuales */
+.theme-btn {
+    background: none;
+    border: 1px solid var(--border-subtle);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
+.theme-btn:hover {
+    background-color: var(--border-subtle);
+    transform: scale(1.05);
+}
+
+.theme-btn i {
+    font-size: 1.25rem;
+    color: var(--text-main);
+}
+
+/* Declaración Dinámica para Iconos de Sol/Luna */
+.theme-btn .icon-sun { display: none; }
+.theme-btn .icon-moon { display: inline-flex; }
+
+body.dark-mode .theme-btn .icon-sun { display: inline-flex; }
+body.dark-mode .theme-btn .icon-moon { display: none; }
 
 /* ==========================================================================
-   5. INTERSECTION OBSERVER ANIMATIONS (SCROLL REVEAL)
+   6. MODIFICADORES DE ESTADO (MANIPULADOS POR JAVASCRIPT)
    ========================================================================== */
+
+/* Clases de Control para Scroll Reveal Nactivo */
 .reveal-hidden {
     opacity: 0;
     transform: translateY(20px);
@@ -316,54 +329,76 @@ body.dark-mode .skill-tag {
     transform: translateY(0);
 }
 
+/* Ocultación Estricta para Filtrado Lógico (Cero Colisiones de Flujo) */
+.job-card.is-hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 /* ==========================================================================
-   6. RESPONSIVIDAD Y OPTIMIZACIÓN DE IMPRESIÓN (PDF)
+   7. RESPONSIVIDAD & REGLAS DE MEDIOS (MEDIA QUERIES)
    ========================================================================== */
 
-/* Si la pantalla es pequeña (Móvil) */
+/* Ajustes Adaptativos para Pantallas Móviles y Tablets */
 @media (max-width: 768px) {
     .cv-container {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    
     .sidebar-column {
         border-left: none;
-        padding-left: 0;
         border-top: 1px solid var(--border-subtle);
+        padding-left: 0;
         padding-top: 2rem;
     }
+    
     body {
         padding: 2rem 1rem;
     }
+    
     .cv-header {
         align-items: center;
     }
+    
     .cv-header h1 {
         font-size: 2.5rem;
     }
 }
 
-/* Formateo exacto cuando el reclutador guarda en PDF o imprime */
+/* Normalización Estricta para Exportación e Impresión Profesional a PDF */
 @media print {
     body {
         background-color: #ffffff !important;
         color: #000000 !important;
         padding: 0;
     }
+    
     .theme-btn,
     .filter-container {
-        display: none !important; /* Oculta botones interactivos inútiles en papel/PDF */
+        display: none !important; /* Exclusión de UI interactiva en documentos físicos */
     }
+    
     .cv-container {
         gap: 2.5rem;
     }
+    
     h2 {
         margin-bottom: 1rem;
     }
+    
     section {
         page-break-inside: avoid;
         margin-bottom: 2rem;
     }
+    
     .reveal-hidden {
         opacity: 1 !important;
         transform: none !important;
