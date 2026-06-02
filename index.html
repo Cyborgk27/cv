@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kevin Cepeda</title>
+    <title>Kevin Cepeda - Ingeniero de Software</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -13,191 +13,172 @@
         <h1>Kevin Cepeda</h1>
         <p>Ingeniero de Software</p>
 
-        <nav>
+        <nav aria-label="Enlaces de contacto">
             <ul>
                 <li>
                     <a href="mailto:cepedayupanqui.kevin@gmail.com">Correo</a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </li>
                 <li>
-                    <a href="https://github.com/Cyborgk27" target="_blank"> Github </a>
+                    <a href="https://github.com/Cyborgk27" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </li>
             </ul>
         </nav>
     </header>
+
     <main>
+        <!-- SECCIÓN: PERFIL -->
         <section id="profile">
             <h2>Perfil Profesional</h2>
-            <article>
+            <p>
                 Ingeniero de Software con sólida experiencia en desarrollo FullStack, especializado en tecnologías .NET,
-                Angular y
-                React. Profesional comprometido con experiencia en el desarrollo y mantenimiento de
-                sistemas ERP
+                Angular y React. Profesional comprometido con experiencia en el desarrollo y mantenimiento de sistemas ERP
                 empresariales, aplicaciones web robustas y soluciones tecnológicas innovadoras. Destacado por mi
-                capacidad de trabajo
-                en equipo, resolución de problemas complejos e implementación de buenas prácticas de desarrollo.
-                Experiencia
-                comprobada en integración de sistemas, optimización de procesos y soporte técnico especializado.
-            </article>
+                capacidad de trabajo en equipo, resolución de problemas complejos e implementación de buenas prácticas de desarrollo.
+                Experiencia comprobada en integración de sistemas, optimización de procesos y soporte técnico especializado.
+            </p>
         </section>
+
+        <!-- SECCIÓN: EXPERIENCIA -->
         <section id="experience">
             <h2>Experiencia Laboral</h2>
-            <article>
-                <h3>
-                    <p>Agrosoft Latam | XASS4 | Guayaquil, Guayas, Ecuador</p>
-                    <p>Diciembre 2025 - Marzo 2026</p>
-                </h3>
-                <p><em> Desarrollador FullStack </em></p>
+
+            <!-- Puesto 1 -->
+            <article class="job-card">
+                <h3>Agrosoft Latam <span class="project-name">| XASS4</span></h3>
+                <p class="job-meta">
+                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
+                    <span class="date">
+                        <time datetime="2025-12">Diciembre 2025</time> - <time datetime="2026-03">Marzo 2026</time>
+                    </span>
+                </p>
+                <p><strong>Desarrollador FullStack</strong></p>
 
                 <ul>
                     <li>
-                        <strong>Desarrollé y mantuve</strong> un sistema ERP multitenant
-                        orientado al sector agrícola y camaronero, utilizando una
-                        arquitectura robusta basada en .NET 8 (ABP Framework) para el
-                        backend y Angular para el frontend
+                        <strong>Desarrollé y mantuve</strong> un sistema ERP multitenant orientado al sector agrícola y camaronero, utilizando una arquitectura robusta basada en .NET 8 (ABP Framework) para el backend y Angular para el frontend.
                     </li>
                     <li>
-                        <strong>Diseñé e implementé</strong> consultas complejas y lógica
-                        de datos optimizada en SQL Server mediante el uso de Entity
-                        Framework y Stored Procedures.
+                        <strong>Diseñé e implementé</strong> consultas complejas y lógica de datos optimizada en SQL Server mediante el uso de Entity Framework y Stored Procedures.
                     </li>
                     <li>
-                        <strong>Construí y ajusté</strong> el módulo de reportería
-                        especializada para el sector camaronero, incluyendo el desarrollo
-                        del reporte crítico de aguaje.
+                        <strong>Construí y ajusté</strong> el módulo de reportería especializada para el sector camaronero, incluyendo el desarrollo del reporte crítico de aguaje.
                     </li>
                     <li>
-                        <strong>Automaticé e integré</strong> el despliegue de cambios
-                        hacia ambientes de producción, garantizando la continuidad
-                        operativa del sistema.
+                        <strong>Automaticé e integré</strong> el despliegue de cambios hacia ambientes de producción, garantizando la continuidad operativa del sistema.
                     </li>
                     <li>
-                        <strong>Soporté y corregí</strong> incidencias críticas tanto en frontend como en backend,
-                        participando activamente en el
-                        mantenimiento evolutivo y correctivo de la plataforma.
+                        <strong>Soporté y corregí</strong> incidencias críticas tanto en frontend como en backend, participando activamente en el mantenimiento evolutivo y correctivo de la plataforma.
                     </li>
                 </ul>
             </article>
-            <article>
-                <h3>
-                    <p>Viamatica | Intecav | Guayaquil, Guayas, Ecuador</p>
-                    <p>Diciembre 2024 - Diciembre 2025</p>
-                </h3>
-                <p><em> Desarrollador FullStack </em></p>
+
+            <!-- Puesto 2 -->
+            <article class="job-card">
+                <h3>Viamatica <span class="project-name">| Intecav</span></h3>
+                <p class="job-meta">
+                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
+                    <span class="date">
+                        <time datetime="2024-12">Diciembre 2024</time> - <time datetime="2025-12">Diciembre 2025</time>
+                    </span>
+                </p>
+                <p><strong>Desarrollador FullStack</strong></p>
 
                 <ul>
                     <li>
-                        <strong>Desarrollé y mantuve</strong> aplicaciones empresariales robustas utilizando C# en el
-                        backend y Angular 14
-                        (TypeScript, Angular Material, Tailwind CSS) en el frontend, garantizando interfaces eficientes
-                        y escalables.
+                        <strong>Desarrollé y mantuve</strong> aplicaciones empresariales robustas utilizando C# en el backend y Angular 14 (TypeScript, Angular Material, Tailwind CSS) en el frontend, garantizando interfaces eficientes y escalables.
                     </li>
                     <li>
-                        <strong>Optimicé</strong> consultas complejas en SQL Server mediante Stored Procedures y diseñé
-                        reportes especializados con
-                        RDLC, reduciendo tiempos de respuesta y dando soporte a incidencias críticas del sistema.
+                        <strong>Optimicé</strong> consultas complejas en SQL Server mediante Stored Procedures y diseñé reportes especializados con RDLC, reduciendo tiempos de respuesta y dando soporte a incidencias críticas del sistema.
                     </li>
                     <li>
-                        <strong>Lideré y brindé</strong> apoyo técnico al equipo de desarrollo, proporcionando
-                        orientación funcional, arquitectónica y
-                        metodológica para asegurar la calidad del software.
+                        <strong>Lideré y brindé</strong> apoyo técnico al equipo de desarrollo, proporcionando orientación funcional, arquitectónica y metodológica para asegurar la calidad del software.
                     </li>
                     <li>
-                        <strong>Supervisé</strong> la calidad del código mediante la revisión y aprobación de Merge
-                        Requests en GitLab, promoviendo
-                        las mejores prácticas de desarrollo dentro del equipo.
+                        <strong>Supervisé</strong> la calidad del código mediante la revisión y aprobación de Merge Requests en GitLab, promoviendo las mejores prácticas de desarrollo dentro del equipo.
                     </li>
                     <li>
-                        <strong>Diseñé e implementé</strong> el marco de trabajo para la integración y promoción de
-                        cambios, definiendo flujos de
-                        branching, versionado y estrategias de despliegue continuo.
+                        <strong>Diseñé e implementé</strong> el marco de trabajo para la integración y promoción de cambios, definiendo flujos de branching, versionado y estrategias de despliegue continuo.
                     </li>
                     <li>
-                        <strong>Gestioné e implementé</strong> el despliegue de versiones en ambientes de producción
-                        utilizando IIS (Internet
-                        Information Services), asegurando la disponibilidad y estabilidad de las plataformas.
+                        <strong>Gestioné e implementé</strong> el despliegue de versiones en ambientes de producción utilizando IIS (Internet Information Services), asegurando la disponibilidad y estabilidad de las plataformas.
                     </li>
                 </ul>
             </article>
-            <article>
-                <h3>
-                    <p>Viamatica | Banco Machala (Ahorro programado) | Guayaquil, Guayas, Ecuador</p>
-                    <p>Septiembre 2024 - Noviembre 2024</p>
-                </h3>
-                <p><em> Desarrollador FullStack </em></p>
+
+            <!-- Puesto 3 -->
+            <article class="job-card">
+                <h3>Viamatica <span class="project-name">| Banco Machala (Ahorro programado)</span></h3>
+                <p class="job-meta">
+                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
+                    <span class="date">
+                        <time datetime="2024-09">Septiembre 2024</time> - <time datetime="2024-11">Noviembre 2024</time>
+                    </span>
+                </p>
+                <p><strong>Desarrollador FullStack</strong></p>
 
                 <ul>
                     <li>
-                        <strong>Lideré el análisis y la migración</strong> del módulo de Ahorro Programado para el Banco
-                        Machala, planificando la
-                        transición tecnológica de una interfaz existente en React hacia una arquitectura moderna en
-                        Angular, alineada
-                        con las APIs en .NET.
+                        <strong>Lideré el análisis y la migración</strong> del módulo de Ahorro Programado para el Banco Machala, planificando la transición tecnológica de una interfaz existente en React hacia una arquitectura moderna en Angular, alineada con las APIs en .NET.
                     </li>
                     <li>
-                        <strong>Analicé e interpreté</strong> documentos de requerimientos funcionales complejos para
-                        transformarlos en
-                        especificaciones técnicas y maquetas de arquitectura frontend y backend.
+                        <strong>Analicé e interpreté</strong> documentos de requerimientos funcionales complejos para transformarlos en especificaciones técnicas y maquetas de arquitectura frontend y backend.
                     </li>
                     <li>
-                        <strong>Investigué y examiné</strong> la lógica de negocio alojada en sistemas legados IBM
-                        AS/400, comprendiendo el flujo
-                        de datos e integraciones necesarias para asegurar la compatibilidad con las nuevas tecnologías.
+                        <strong>Investigué y examined</strong> la lógica de negocio alojada en sistemas legados IBM AS/400, comprendiendo el flujo de datos e integraciones necesarias para asegurar la compatibilidad con las nuevas tecnologías.
                     </li>
                     <li>
-                        <strong>Colaboré en el diseño conceptual</strong> del flujo de datos entre la banca web moderna
-                        y los servicios del core
-                        bancario tradicional bajo estándares de alta disponibilidad y seguridad financiera.
+                        <strong>Colaboré en el diseño conceptual</strong> del flujo de datos entre la banca web moderna y los servicios del core bancario tradicional bajo estándares de alta disponibilidad y seguridad financiera.
                     </li>
                 </ul>
             </article>
-            <article>
-                <h3>
-                    <p>Viamatica | ARCSA | Guayaquil, Guayas, Ecuador</p>
-                    <p>Mayo 2023 - Agosto 2023</p>
-                </h3>
-                <p><em>Analista de Documentación</em></p>
+
+            <!-- Puesto 4 -->
+            <article class="job-card">
+                <h3>Viamatica <span class="project-name">| ARCSA</span></h3>
+                <p class="job-meta">
+                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
+                    <span class="date">
+                        <time datetime="2023-05">Mayo 2023</time> - <time datetime="2023-08">Agosto 2023</time>
+                    </span>
+                </p>
+                <p><strong>Analista de Documentación</strong></p>
 
                 <ul>
                     <li>
-                        <strong>Diseñé y produje</strong> tutoriales audiovisuales e instructivos didácticos basados en
-                        documentación técnica
-                        compleja, facilitando la adopción tecnológica y capacitación de los usuarios finales del sistema
-                        ERP.
+                        <strong>Diseñé y produje</strong> tutoriales audiovisuales e instructivos didácticos basados en documentación técnica compleja, facilitando la adopción tecnológica y capacitación de los usuarios finales del sistema ERP.
                     </li>
                     <li>
-                        <strong>Redacté y estructuré</strong> la documentación técnica detallada de múltiples módulos
-                        del ERP, enfocándome en las
-                        especificaciones de permisos, gestión de identidades y controles de acceso.
+                        <strong>Redacté y estructuré</strong> la documentación técnica detallada de múltiples módulos del ERP, enfocándose en las especificaciones de permisos, gestión de identidades y controles de acceso.
                     </li>
                     <li>
-                        <strong>Colaboré</strong> en el aseguramiento de calidad (QA) mediante la ejecución de pruebas
-                        del sistema y la validación
-                        minuciosa de requisitos funcionales frente al software entregado.
+                        <strong>Colaboré</strong> en el aseguramiento de calidad (QA) mediante la ejecución de pruebas del sistema y la validación minuciosa de requisitos funcionales frente al software entregado.
                     </li>
                     <li>
-                        <strong>Lideré</strong> la gestión de requerimientos mediante la coordinación de reuniones
-                        diarias (Daily Meetings) con los
-                        clientes, recopilando retroalimentación crítica y traduciendo sus necesidades en reglas de
-                        negocio claras.
+                        <strong>Lideré</strong> la gestión de requerimientos mediante la coordinación de reuniones diarias (Daily Meetings) con los clientes, recopilando retroalimentación crítica y traduciendo sus necesidades en reglas de negocio claras.
                     </li>
                     <li>
-                        <strong>Facilité</strong> la comunicación entre las partes interesadas (Stakeholders) y el
-                        equipo técnico, asegurando la
-                        alineación sobre las normas empresariales y la funcionalidad esperada de la plataforma.
+                        <strong>Facilité</strong> la comunicación entre las partes interesadas (Stakeholders) y el equipo técnico, asegurando la alineación sobre las normas empresariales y la funcionalidad esperada de la plataforma.
                     </li>
                 </ul>
             </article>
         </section>
+
+        <!-- SECCIÓN: EDUCACIÓN -->
         <section id="education">
             <h2>Educación</h2>
-            <h3>
-                    <p>Universidad de Guayaquil | Guayaquil, Guayas, Ecuador</p>
-                    <p>Noviembre 2019 - Agosto 2026</p>
-                </h3>
-            <p><em>Grado en Ingeniería de Software</em></p>
+            <article class="education-card">
+                <h3>Universidad de Guayaquil</h3>
+                <p class="education-meta">
+                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
+                    <span class="date">
+                        <time datetime="2019-11">Noviembre 2019</time> - <time datetime="2026-08">Agosto 2026</time>
+                    </span>
+                </p>
+                <p><em>Grado en Ingeniería de Software</em></p>
+            </article>
         </section>
     </main>
 </body>
