@@ -13,6 +13,15 @@
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Variables del Modo Oscuro (Mapeadas de forma nativa) */
+body.dark-mode {
+    --bg-color: #0f172a;       /* Fondo azul oscuro profundo */
+    --text-main: #f8fafc;      /* Texto casi blanco */
+    --text-muted: #94a3b8;     /* Gris claro para detalles */
+    --accent-color: #38bdf8;   /* Azul cielo brillante para acentos */
+    --border-subtle: #334155;  /* Separadores oscuros */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,6 +35,7 @@ body {
     line-height: 1.6;
     padding: 4rem 2rem;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ==========================================================================
@@ -60,7 +70,15 @@ h2 {
    3. COLUMNA IZQUIERDA (HEADER Y EXPERIENCIA)
    ========================================================================== */
 .cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 3rem;
+    gap: 1rem;
+}
+
+.header-title-container {
+    flex: 1;
 }
 
 .cv-header h1 {
@@ -86,9 +104,58 @@ h2 {
     text-align: justify;
 }
 
+/* Botón de cambio de tema */
+.theme-btn {
+    background: none;
+    border: 1px solid var(--border-subtle);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.theme-btn:hover {
+    background-color: var(--border-subtle);
+    transform: scale(1.05);
+}
+
+/* Componente Interactivo: Contenedor de Filtros de Tecnología */
+.filter-container {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
 /* Tarjetas de Trabajo */
 .job-card {
     margin-bottom: 2.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Necesario para el filtrado dinámico */
 }
 
 .job-header {
@@ -133,25 +200,20 @@ h2 {
     margin-bottom: 0.75rem;
 }
 
-/* Lista de logros elegante */
+/* Lista de logros elegante - CORREGIDA SIN RAYAS NI PUNTOS */
 .job-card ul {
     list-style: none;
     list-style-type: none;
+    margin-top: 0.5rem;
 }
 
 .job-card ul li {
     position: relative;
-    padding-left: 1.2rem;
-    margin-bottom: 0.5rem;
+    padding-left: 0; /* Limpieza completa de márgenes heredados */
+    margin-bottom: 0.6rem;
     font-size: 0.98rem;
     color: var(--text-main);
-}
-
-.job-card ul li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--text-muted);
+    text-align: justify;
 }
 
 /* ==========================================================================
@@ -219,20 +281,46 @@ h2 {
 }
 
 .skill-tag {
-    background-color: #fff;
+    background-color: transparent; /* Permite una transición adaptativa limpia */
+    background-color: rgba(255, 255, 255, 0.05); /* Sutil respaldo */
     color: var(--text-main);
     font-size: 0.85rem;
     font-weight: 500;
     padding: 0.4rem 0.75rem;
     border-radius: 4px;
     border: 1px solid var(--border-subtle);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Sobreescritura específica para el fondo de los tags en Modo Claro */
+body:not(.dark-mode) .skill-tag {
+    background-color: #ffffff; 
+}
+
+body.dark-mode .skill-tag {
+    background-color: #1e293b; 
 }
 
 /* ==========================================================================
-   5. RESPONSIVIDAD Y OPTIMIZACIÓN DE IMPRESIÓN (PDF)
+   5. INTERSECTION OBSERVER ANIMATIONS (SCROLL REVEAL)
+   ========================================================================== */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDAD Y OPTIMIZACIÓN DE IMPRESIÓN (PDF)
    ========================================================================== */
 
-/* Si la pantalla es pequeña (Móvil), pasa a 1 sola columna de forma fluida */
+/* Si la pantalla es pequeña (Móvil) */
 @media (max-width: 768px) {
     .cv-container {
         grid-template-columns: 1fr;
@@ -247,16 +335,24 @@ h2 {
     body {
         padding: 2rem 1rem;
     }
+    .cv-header {
+        align-items: center;
+    }
     .cv-header h1 {
         font-size: 2.5rem;
     }
 }
 
-/* Formateo exacto cuando el reclutador guarda en PDF */
+/* Formateo exacto cuando el reclutador guarda en PDF o imprime */
 @media print {
     body {
-        background-color: #fff;
+        background-color: #ffffff !important;
+        color: #000000 !important;
         padding: 0;
+    }
+    .theme-btn,
+    .filter-container {
+        display: none !important; /* Oculta botones interactivos inútiles en papel/PDF */
     }
     .cv-container {
         gap: 2.5rem;
@@ -267,5 +363,9 @@ h2 {
     section {
         page-break-inside: avoid;
         margin-bottom: 2rem;
+    }
+    .reveal-hidden {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }

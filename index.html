@@ -4,38 +4,54 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kevin Cepeda — Ingeniero de Software</title>
+    
+    <title>Kevin Cepeda | Ingeniero de Software & Desarrollador FullStack</title>
+    <meta name="description" content="Portafolio y CV profesional de Kevin Cepeda, Ingeniero de Software especializado en desarrollo FullStack con .NET, Angular, React y arquitecturas de sistemas ERP." />
+    <meta name="keywords" content="Kevin Cepeda, Ingeniero de Software, FullStack Developer, .NET, Angular, React, Guayaquil, Ecuador, Desarrollo ERP, C#" />
+    <meta name="author" content="Kevin Cepeda" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Kevin Cepeda | Ingeniero de Software" />
+    <meta property="og:description" content="Desarrollador FullStack especializado en soluciones empresariales robustas con .NET y arquitecturas modernas en Angular/React." />
+    <meta property="og:url" content="https://tudominio.com" /> <meta property="og:site_name" content="CV Kevin Cepeda" />
+    
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <!-- CONTENEDOR PRINCIPAL -->
     <main class="cv-container">
         
-        <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL -->
         <div class="main-column">
             <header class="cv-header">
-                <h1>Kevin Cepeda</h1>
-                <p class="subtitle">Ingeniero de Software</p>
+                <div class="header-title-container">
+                    <h1>Kevin Cepeda</h1>
+                    <p class="subtitle">Ingeniero de Software</p>
+                </div>
+                <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema visual">🌙</button>
             </header>
 
-            <!-- SECCIÓN: PERFIL -->
             <section id="profile">
                 <h2>Perfil Profesional</h2>
                 <p class="profile-text">
-                    Ingeniero de Software con sólida experiencia en desarrollo FullStack, especializado en tecnologías <strong>.Net</strong>,
+                    Ingeniero de Software con sólida experiencia en desarrollo FullStack, especializado en tecnologías <strong>.NET</strong>,
                     <strong>Angular</strong> y <strong>React</strong>. Profesional comprometido con experiencia en el desarrollo y mantenimiento de sistemas ERP
                     empresariales, aplicaciones web robustas y soluciones tecnológicas innovadoras. Destacado por mi
                     capacidad de trabajo en equipo, resolución de problemas complejos e implementación de buenas prácticas de desarrollo.
                 </p>
             </section>
 
-            <!-- SECCIÓN: EXPERIENCIA -->
             <section id="experience">
                 <h2>Experiencia Laboral</h2>
 
-                <!-- Puesto 1 -->
-                <article class="job-card">
+                <div class="filter-container" aria-label="Filtrar experiencia por tecnología">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="net">.NET (C#)</button>
+                    <button class="filter-btn" data-filter="angular">Angular</button>
+                    <button class="filter-btn" data-filter="react">React</button>
+                </div>
+
+                <article class="job-card" data-tech="net angular">
                     <div class="job-header">
                         <h3>Agrosoft Latam <span class="project-name">| XASS4</span></h3>
                         <time class="job-date" datetime="2025-12">Dic 2025 - Mar 2026</time>
@@ -49,8 +65,7 @@
                     </ul>
                 </article>
 
-                <!-- Puesto 2 -->
-                <article class="job-card">
+                <article class="job-card" data-tech="net angular">
                     <div class="job-header">
                         <h3>Viamatica <span class="project-name">| Intecav</span></h3>
                         <time class="job-date" datetime="2024-12">Dic 2024 - Dic 2025</time>
@@ -64,8 +79,7 @@
                     </ul>
                 </article>
 
-                <!-- Puesto 3 -->
-                <article class="job-card">
+                <article class="job-card" data-tech="net react angular">
                     <div class="job-header">
                         <h3>Viamatica <span class="project-name">| Banco Machala</span></h3>
                         <time class="job-date" datetime="2024-09">Sep 2024 - Nov 2024</time>
@@ -78,8 +92,7 @@
                     </ul>
                 </article>
 
-                <!-- Puesto 4 -->
-                <article class="job-card">
+                <article class="job-card" data-tech="documentacion erp">
                     <div class="job-header">
                         <h3>Viamatica <span class="project-name">| ARCSA</span></h3>
                         <time class="job-date" datetime="2023-05">May 2023 - Ago 2023</time>
@@ -94,41 +107,37 @@
             </section>
         </div>
 
-        <!-- COLUMNA DERECHA: INFORMACIÓN DE SOPORTE -->
         <aside class="sidebar-column">
             
-            <!-- CONTACTO -->
             <section id="contact">
                 <h2>Contacto</h2>
                 <nav aria-label="Enlaces de contacto">
                     <ul class="contact-list">
                         <li>
-                            <span class="icon">✉</span> 
-                            <a href="mailto:cepedayupanqui.kevin@gmail.com">cepedayupanqui.kevin@gmail.com</a>
+                            <span class="icon" aria-hidden="true">✉</span> 
+                            <a href="mailto:cepedayupanqui.kevin@gmail.com" title="Enviar correo electrónico">cepedayupanqui.kevin@gmail.com</a>
                         </li>
                         <li>
-                            <span class="icon">💼</span> 
-                            <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kevincepeda27</a>
+                            <span class="icon" aria-hidden="true">💼</span> 
+                            <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank" rel="noopener noreferrer" title="Visitar perfil de LinkedIn">linkedin.com/in/kevincepeda27</a>
                         </li>
                         <li>
-                            <span class="icon">🐙</span> 
-                            <a href="https://github.com/Cyborgk27" target="_blank" rel="noopener noreferrer">github.com/Cyborgk27</a>
+                            <span class="icon" aria-hidden="true">🐙</span> 
+                            <a href="https://github.com/Cyborgk27" target="_blank" rel="noopener noreferrer" title="Visitar perfil de GitHub">github.com/Cyborgk27</a>
                         </li>
                     </ul>
                 </nav>
             </section>
 
-            <!-- EDUCACIÓN -->
             <section id="education">
                 <h2>Educación</h2>
                 <article class="education-card">
                     <h3>Universidad de Guayaquil</h3>
                     <p class="education-degree">Ingeniería de Software</p>
-                    <time class="sidebar-date">2019 - 2026</time>
+                    <time class="sidebar-date" datetime="2019/2026">2019 - 2026</time>
                 </article>
             </section>
 
-            <!-- HABILIDADES (¡Añadido clave para reclutadores!) -->
             <section id="skills">
                 <h2>Habilidades</h2>
                 <div class="skills-container">
@@ -144,6 +153,8 @@
         </aside>
 
     </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
