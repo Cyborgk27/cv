@@ -4,182 +4,145 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kevin Cepeda - Ingeniero de Software</title>
+    <title>Kevin Cepeda — Ingeniero de Software</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Kevin Cepeda</h1>
-        <p>Ingeniero de Software</p>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="cv-container">
+        
+        <!-- COLUMNA IZQUIERDA: CONTENIDO PRINCIPAL -->
+        <div class="main-column">
+            <header class="cv-header">
+                <h1>Kevin Cepeda</h1>
+                <p class="subtitle">Ingeniero de Software</p>
+            </header>
 
-        <nav aria-label="Enlaces de contacto">
-            <ul>
-                <li>
-                    <a href="mailto:cepedayupanqui.kevin@gmail.com">Correo</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </li>
-                <li>
-                    <a href="https://github.com/Cyborgk27" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!-- SECCIÓN: PERFIL -->
-        <section id="profile">
-            <h2>Perfil Profesional</h2>
-            <p>
-                Ingeniero de Software con sólida experiencia en desarrollo FullStack, especializado en tecnologías .NET,
-                Angular y React. Profesional comprometido con experiencia en el desarrollo y mantenimiento de sistemas ERP
-                empresariales, aplicaciones web robustas y soluciones tecnológicas innovadoras. Destacado por mi
-                capacidad de trabajo en equipo, resolución de problemas complejos e implementación de buenas prácticas de desarrollo.
-                Experiencia comprobada en integración de sistemas, optimización de procesos y soporte técnico especializado.
-            </p>
-        </section>
-
-        <!-- SECCIÓN: EXPERIENCIA -->
-        <section id="experience">
-            <h2>Experiencia Laboral</h2>
-
-            <!-- Puesto 1 -->
-            <article class="job-card">
-                <h3>Agrosoft Latam <span class="project-name">| XASS4</span></h3>
-                <p class="job-meta">
-                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
-                    <span class="date">
-                        <time datetime="2025-12">Diciembre 2025</time> - <time datetime="2026-03">Marzo 2026</time>
-                    </span>
+            <!-- SECCIÓN: PERFIL -->
+            <section id="profile">
+                <h2>Perfil Profesional</h2>
+                <p class="profile-text">
+                    Ingeniero de Software con sólida experiencia en desarrollo FullStack, especializado en tecnologías <strong>.Net</strong>,
+                    <strong>Angular</strong> y <strong>React</strong>. Profesional comprometido con experiencia en el desarrollo y mantenimiento de sistemas ERP
+                    empresariales, aplicaciones web robustas y soluciones tecnológicas innovadoras. Destacado por mi
+                    capacidad de trabajo en equipo, resolución de problemas complejos e implementación de buenas prácticas de desarrollo.
                 </p>
-                <p><strong>Desarrollador FullStack</strong></p>
+            </section>
 
-                <ul>
-                    <li>
-                        <strong>Desarrollé y mantuve</strong> un sistema ERP multitenant orientado al sector agrícola y camaronero, utilizando una arquitectura robusta basada en .NET 8 (ABP Framework) para el backend y Angular para el frontend.
-                    </li>
-                    <li>
-                        <strong>Diseñé e implementé</strong> consultas complejas y lógica de datos optimizada en SQL Server mediante el uso de Entity Framework y Stored Procedures.
-                    </li>
-                    <li>
-                        <strong>Construí y ajusté</strong> el módulo de reportería especializada para el sector camaronero, incluyendo el desarrollo del reporte crítico de aguaje.
-                    </li>
-                    <li>
-                        <strong>Automaticé e integré</strong> el despliegue de cambios hacia ambientes de producción, garantizando la continuidad operativa del sistema.
-                    </li>
-                    <li>
-                        <strong>Soporté y corregí</strong> incidencias críticas tanto en frontend como en backend, participando activamente en el mantenimiento evolutivo y correctivo de la plataforma.
-                    </li>
-                </ul>
-            </article>
+            <!-- SECCIÓN: EXPERIENCIA -->
+            <section id="experience">
+                <h2>Experiencia Laboral</h2>
 
-            <!-- Puesto 2 -->
-            <article class="job-card">
-                <h3>Viamatica <span class="project-name">| Intecav</span></h3>
-                <p class="job-meta">
-                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
-                    <span class="date">
-                        <time datetime="2024-12">Diciembre 2024</time> - <time datetime="2025-12">Diciembre 2025</time>
-                    </span>
-                </p>
-                <p><strong>Desarrollador FullStack</strong></p>
+                <!-- Puesto 1 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <h3>Agrosoft Latam <span class="project-name">| XASS4</span></h3>
+                        <time class="job-date" datetime="2025-12">Dic 2025 - Mar 2026</time>
+                    </div>
+                    <p class="job-role">Desarrollador FullStack</p>
+                    <p class="job-location">Guayaquil, Ecuador</p>
+                    <ul>
+                        <li><strong>Desarrollé y mantuve</strong> un sistema ERP multitenant orientado al sector agrícola y camaronero, utilizando una arquitectura robusta basada en .NET 8 (ABP Framework) para el backend y Angular para el frontend.</li>
+                        <li><strong>Diseñé e implementé</strong> consultas complejas y lógica de datos optimizada en SQL Server mediante el uso de Entity Framework y Stored Procedures.</li>
+                        <li><strong>Construí y ajusté</strong> el módulo de reportería especializada para el sector camaronero, incluyendo el desarrollo del reporte crítico de aguaje.</li>
+                    </ul>
+                </article>
 
-                <ul>
-                    <li>
-                        <strong>Desarrollé y mantuve</strong> aplicaciones empresariales robustas utilizando C# en el backend y Angular 14 (TypeScript, Angular Material, Tailwind CSS) en el frontend, garantizando interfaces eficientes y escalables.
-                    </li>
-                    <li>
-                        <strong>Optimicé</strong> consultas complejas en SQL Server mediante Stored Procedures y diseñé reportes especializados con RDLC, reduciendo tiempos de respuesta y dando soporte a incidencias críticas del sistema.
-                    </li>
-                    <li>
-                        <strong>Lideré y brindé</strong> apoyo técnico al equipo de desarrollo, proporcionando orientación funcional, arquitectónica y metodológica para asegurar la calidad del software.
-                    </li>
-                    <li>
-                        <strong>Supervisé</strong> la calidad del código mediante la revisión y aprobación de Merge Requests en GitLab, promoviendo las mejores prácticas de desarrollo dentro del equipo.
-                    </li>
-                    <li>
-                        <strong>Diseñé e implementé</strong> el marco de trabajo para la integración y promoción de cambios, definiendo flujos de branching, versionado y estrategias de despliegue continuo.
-                    </li>
-                    <li>
-                        <strong>Gestioné e implementé</strong> el despliegue de versiones en ambientes de producción utilizando IIS (Internet Information Services), asegurando la disponibilidad y estabilidad de las plataformas.
-                    </li>
-                </ul>
-            </article>
+                <!-- Puesto 2 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <h3>Viamatica <span class="project-name">| Intecav</span></h3>
+                        <time class="job-date" datetime="2024-12">Dic 2024 - Dic 2025</time>
+                    </div>
+                    <p class="job-role">Desarrollador FullStack</p>
+                    <p class="job-location">Guayaquil, Ecuador</p>
+                    <ul>
+                        <li><strong>Desarrollé y mantuve</strong> aplicaciones empresariales robustas utilizando C# (.NET) en el backend y Angular 14 (TypeScript, Angular Material, Tailwind CSS) en el frontend.</li>
+                        <li><strong>Optimicé</strong> consultas complejas en SQL Server mediante Stored Procedures y diseñé reportes especializados con RDLC, reduciendo tiempos de respuesta.</li>
+                        <li><strong>Supervisé</strong> la calidad del código mediante la revisión y aprobación de Merge Requests en GitLab, promoviendo las mejores prácticas.</li>
+                    </ul>
+                </article>
 
-            <!-- Puesto 3 -->
-            <article class="job-card">
-                <h3>Viamatica <span class="project-name">| Banco Machala (Ahorro programado)</span></h3>
-                <p class="job-meta">
-                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
-                    <span class="date">
-                        <time datetime="2024-09">Septiembre 2024</time> - <time datetime="2024-11">Noviembre 2024</time>
-                    </span>
-                </p>
-                <p><strong>Desarrollador FullStack</strong></p>
+                <!-- Puesto 3 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <h3>Viamatica <span class="project-name">| Banco Machala</span></h3>
+                        <time class="job-date" datetime="2024-09">Sep 2024 - Nov 2024</time>
+                    </div>
+                    <p class="job-role">Desarrollador FullStack (Ahorro programado)</p>
+                    <p class="job-location">Guayaquil, Ecuador</p>
+                    <ul>
+                        <li><strong>Lideré la migración</strong> del módulo de Ahorro Programado, planificando la transición tecnológica de una interfaz existente en React hacia una arquitectura moderna en Angular, alineada con APIs en .NET.</li>
+                        <li><strong>Investigué y examiné</strong> la lógica de negocio alojada en sistemas legados IBM AS/400, comprendiendo el flujo de datos e integraciones necesarias.</li>
+                    </ul>
+                </article>
 
-                <ul>
-                    <li>
-                        <strong>Lideré el análisis y la migración</strong> del módulo de Ahorro Programado para el Banco Machala, planificando la transición tecnológica de una interfaz existente en React hacia una arquitectura moderna en Angular, alineada con las APIs en .NET.
-                    </li>
-                    <li>
-                        <strong>Analicé e interpreté</strong> documentos de requerimientos funcionales complejos para transformarlos en especificaciones técnicas y maquetas de arquitectura frontend y backend.
-                    </li>
-                    <li>
-                        <strong>Investigué y examined</strong> la lógica de negocio alojada en sistemas legados IBM AS/400, comprendiendo el flujo de datos e integraciones necesarias para asegurar la compatibilidad con las nuevas tecnologías.
-                    </li>
-                    <li>
-                        <strong>Colaboré en el diseño conceptual</strong> del flujo de datos entre la banca web moderna y los servicios del core bancario tradicional bajo estándares de alta disponibilidad y seguridad financiera.
-                    </li>
-                </ul>
-            </article>
+                <!-- Puesto 4 -->
+                <article class="job-card">
+                    <div class="job-header">
+                        <h3>Viamatica <span class="project-name">| ARCSA</span></h3>
+                        <time class="job-date" datetime="2023-05">May 2023 - Ago 2023</time>
+                    </div>
+                    <p class="job-role">Analista de Documentación</p>
+                    <p class="job-location">Guayaquil, Ecuador</p>
+                    <ul>
+                        <li><strong>Diseñé y produje</strong> tutoriales audiovisuales e instructivos didácticos basados en documentación técnica compleja para usuarios finales del sistema ERP.</li>
+                        <li><strong>Colaboré</strong> en el aseguramiento de calidad (QA) mediante la ejecución de pruebas del sistema y la validación minuciosa de requisitos funcionales.</li>
+                    </ul>
+                </article>
+            </section>
+        </div>
 
-            <!-- Puesto 4 -->
-            <article class="job-card">
-                <h3>Viamatica <span class="project-name">| ARCSA</span></h3>
-                <p class="job-meta">
-                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
-                    <span class="date">
-                        <time datetime="2023-05">Mayo 2023</time> - <time datetime="2023-08">Agosto 2023</time>
-                    </span>
-                </p>
-                <p><strong>Analista de Documentación</strong></p>
+        <!-- COLUMNA DERECHA: INFORMACIÓN DE SOPORTE -->
+        <aside class="sidebar-column">
+            
+            <!-- CONTACTO -->
+            <section id="contact">
+                <h2>Contacto</h2>
+                <nav aria-label="Enlaces de contacto">
+                    <ul class="contact-list">
+                        <li>
+                            <span class="icon">✉</span> 
+                            <a href="mailto:cepedayupanqui.kevin@gmail.com">cepedayupanqui.kevin@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">💼</span> 
+                            <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kevincepeda27</a>
+                        </li>
+                        <li>
+                            <span class="icon">🐙</span> 
+                            <a href="https://github.com/Cyborgk27" target="_blank" rel="noopener noreferrer">github.com/Cyborgk27</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
 
-                <ul>
-                    <li>
-                        <strong>Diseñé y produje</strong> tutoriales audiovisuales e instructivos didácticos basados en documentación técnica compleja, facilitando la adopción tecnológica y capacitación de los usuarios finales del sistema ERP.
-                    </li>
-                    <li>
-                        <strong>Redacté y estructuré</strong> la documentación técnica detallada de múltiples módulos del ERP, enfocándose en las especificaciones de permisos, gestión de identidades y controles de acceso.
-                    </li>
-                    <li>
-                        <strong>Colaboré</strong> en el aseguramiento de calidad (QA) mediante la ejecución de pruebas del sistema y la validación minuciosa de requisitos funcionales frente al software entregado.
-                    </li>
-                    <li>
-                        <strong>Lideré</strong> la gestión de requerimientos mediante la coordinación de reuniones diarias (Daily Meetings) con los clientes, recopilando retroalimentación crítica y traduciendo sus necesidades en reglas de negocio claras.
-                    </li>
-                    <li>
-                        <strong>Facilité</strong> la comunicación entre las partes interesadas (Stakeholders) y el equipo técnico, asegurando la alineación sobre las normas empresariales y la funcionalidad esperada de la plataforma.
-                    </li>
-                </ul>
-            </article>
-        </section>
+            <!-- EDUCACIÓN -->
+            <section id="education">
+                <h2>Educación</h2>
+                <article class="education-card">
+                    <h3>Universidad de Guayaquil</h3>
+                    <p class="education-degree">Ingeniería de Software</p>
+                    <time class="sidebar-date">2019 - 2026</time>
+                </article>
+            </section>
 
-        <!-- SECCIÓN: EDUCACIÓN -->
-        <section id="education">
-            <h2>Educación</h2>
-            <article class="education-card">
-                <h3>Universidad de Guayaquil</h3>
-                <p class="education-meta">
-                    <span class="location">Guayaquil, Guayas, Ecuador</span>  
-                    <span class="date">
-                        <time datetime="2019-11">Noviembre 2019</time> - <time datetime="2026-08">Agosto 2026</time>
-                    </span>
-                </p>
-                <p><em>Grado en Ingeniería de Software</em></p>
-            </article>
-        </section>
+            <!-- HABILIDADES (¡Añadido clave para reclutadores!) -->
+            <section id="skills">
+                <h2>Habilidades</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">.NET (C#)</span>
+                    <span class="skill-tag">Angular</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">SQL Server</span>
+                    <span class="skill-tag">Entity Framework</span>
+                    <span class="skill-tag">Architecture (ERP)</span>
+                    <span class="skill-tag">GitLab / CI-CD</span>
+                </div>
+            </section>
+        </aside>
+
     </main>
 </body>
 
