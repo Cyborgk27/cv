@@ -28,18 +28,34 @@ cv/
 │  └─ cv-harvard.odt        ← plantilla de impresión con marcadores <!--CV:*-->
 ├─ scripts/
 │  ├─ build.py              ← orquesta todo
-│  ├─ build_site.py         ← JSON + tpl → index.html
+│  ├─ build_site.py         ← JSON + tpl → index.html + SEO
 │  ├─ build_pdf.py          ← JSON + odt → dist/*.odt + *.pdf
+│  ├─ gen_assets.py         ← opcional: regenera OG image y favicons
 │  └─ init_template.py      ← utilidad de un solo uso (inserta marcadores en el ODT)
+├─ assets/
+│  ├─ icons/                ← favicon.svg, favicon-32/16.png, apple-touch-icon.png
+│  └─ og/                   ← og-source.html + og-image.png (1200×630)
 ├─ dist/
 │  ├─ Kevin_Cepeda_CV.pdf   ← generado
 │  └─ Kevin_Cepeda_CV.odt   ← generado
 ├─ index.html               ← GENERADO (no editar a mano)
-├─ css/ · js/ · assets/
+├─ robots.txt · sitemap.xml · site.webmanifest   ← GENERADOS
+├─ css/ · js/
 └─ .github/workflows/build.yml
 ```
 
-> ⚠️ `index.html` y `dist/` son **artefactos generados**. Si los editas a mano, el siguiente build los sobrescribe.
+> ⚠️ `index.html`, `robots.txt`, `sitemap.xml`, `site.webmanifest` y `dist/` son **artefactos generados**. Si los editas a mano, el siguiente build los sobrescribe.
+
+## 🎨 Diseño
+
+Tema **terminal / dev**, no corporativo:
+
+- Ventana de terminal con prompt `whoami`, avatar monograma **KC** y acento cian.
+- **Material Symbols (Google)** con subset de ~34 iconos: cada skill lleva el suyo.
+- Dark-first con toggle persistente; respeta `prefers-color-scheme` si no hay preferencia guardada.
+- Timeline de experiencia agrupada por empleador (estilo LinkedIn).
+- `@media print` mantiene el CV imprimible en blanco y negro.
+
 
 ---
 
@@ -79,6 +95,18 @@ python scripts/build.py --lang en
 
 - **Python 3.10+** (solo librería estándar)
 - **LibreOffice** (para exportar el PDF) — se detecta automáticamente en Windows, macOS y Linux
+- **Playwright** (opcional, solo para regenerar las imágenes de marca)
+
+## 🖼️ Imágenes de marca
+
+`assets/og/og-source.html` es la fuente de la tarjeta Open Graph. Para regenerar los PNG:
+
+```bash
+pip install playwright && playwright install chromium
+python scripts/gen_assets.py
+```
+
+Los PNG están versionados, así que **el CI no necesita Playwright**: solo se regeneran cuando cambias el diseño de la tarjeta.
 
 ## ✅ Verificación
 

@@ -1,0 +1,26 @@
+{
+  "name": "Kevin Cepeda — Full Stack Developer · .NET 8 & Angular",
+  "short_name": "Kevin Cepeda",
+  "description": "CV profesional de Kevin Cepeda, Full Stack Developer especializado en .NET 8 y Angular para el sector financiero: banca, seguridad de aplicaciones (Checkmarx, OWASP Top 10) y observabilidad con OpenTelemetry.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "icons": [
+    {
+      "src": "assets/icons/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

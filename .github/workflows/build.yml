@@ -46,7 +46,7 @@ jobs:
       - name: Preparar artefacto de Pages
         run: |
           mkdir -p _site
-          cp -r index.html css js assets dist _site/
+          cp -r index.html robots.txt sitemap.xml site.webmanifest css js assets dist _site/
 
       - uses: actions/upload-pages-artifact@v3
         with:

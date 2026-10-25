@@ -1,61 +1,75 @@
 /* ==========================================================================
-   CV INTERACTIVO - SCRIPT PRINCIPAL
+   CV INTERACTIVO — SCRIPT PRINCIPAL
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initThemeToggle();
+    initTheme();
     initScrollReveal();
     initJobFilter();
 });
 
 /* ==========================================================================
-   1. MODO OSCURO (THEME TOGGLE)
+   1. TEMA (dark-first, respeta preferencia del sistema)
    ========================================================================== */
-function initThemeToggle() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (!themeToggleBtn) return;
+function initTheme() {
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
 
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const saved = localStorage.getItem('theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initial = saved || (prefersLight ? 'light' : 'dark');
+    root.dataset.theme = initial;
 
-    // Sincronizar el estado inicial lógico
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.body.classList.add('dark-mode');
-    }
+    if (!button) return;
 
-    // El evento muta el estado del body; el CSS controla qué icono renderizar
-    themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    const syncLabel = () => {
+        button.setAttribute(
+            'aria-label',
+            root.dataset.theme === 'dark' ? 'Activar tema claro' : 'Activar tema oscuro'
+        );
+    };
+    syncLabel();
+
+    button.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('theme', next);
+        syncLabel();
     });
 }
 
 /* ==========================================================================
-   2. ANIMACIÓN AL HACER SCROLL (SCROLL REVEAL)
+   2. APARICIÓN AL HACER SCROLL
    ========================================================================== */
 function initScrollReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal-active');
-                observer.unobserve(entry.target); 
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
 
-    const cards = document.querySelectorAll('.job-card, .education-card, #profile');
-    cards.forEach(card => {
-        card.classList.add('reveal-hidden');
-        observer.observe(card);
+    const targets = document.querySelectorAll('.company-block, .project-card, .skill-group');
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    targets.forEach(target => {
+        target.classList.add('reveal-hidden');
+        observer.observe(target);
     });
 }
 
 /* ==========================================================================
-   3. FILTRADO DINÁMICO DE EXPERIENCIA
+   3. FILTRO DE EXPERIENCIA
+   El filtro opera por cargo: oculta los que no coinciden y esconde el
+   empleador cuando no queda ninguno visible.
    ========================================================================== */
 function initJobFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -65,13 +79,11 @@ function initJobFilter() {
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Alternar estado activo del botón presionado
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
             const selectedFilter = button.getAttribute('data-filter');
 
-            // Se filtra a nivel de cargo y se oculta el empleador si no queda ninguno visible
             blocks.forEach(block => {
                 const positions = block.querySelectorAll('.position');
                 let visible = 0;
@@ -80,6 +92,7 @@ function initJobFilter() {
                     const positionTech = (position.getAttribute('data-tech') || '').toLowerCase();
                     const matchesFilter =
                         selectedFilter === 'all' || positionTech.includes(selectedFilter);
+
                     position.classList.toggle('is-hidden', !matchesFilter);
                     if (matchesFilter) visible++;
                 });

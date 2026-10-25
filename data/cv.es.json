@@ -2,7 +2,8 @@
   "meta": {
     "lang": "es",
     "updated": "2026-10-25",
-    "file_name": "Kevin_Cepeda_CV"
+    "file_name": "Kevin_Cepeda_CV",
+    "site_url": "https://cyborgk27.github.io/cv/"
   },
   "person": {
     "name": "Kevin Cepeda",
@@ -170,6 +171,46 @@
       ]
     }
   ],
+  "stats": [
+    { "value": "2+", "label": "años en desarrollo" },
+    { "value": "3", "label": "empresas" },
+    { "value": "6", "label": "certificaciones" },
+    { "value": "4", "label": "proyectos destacados" }
+  ],
+  "projects": [
+    {
+      "name": "Portal de Contraloría Financiera",
+      "badge": "Banca",
+      "icon": "dashboard",
+      "description": "SPA Angular 21 (standalone, signals, OnPush) con BFF sobre Microsoft Graph y SharePoint: tableros Power BI, herramientas analíticas y descargas del área.",
+      "stack": ["Angular 21", "MSAL / Entra ID", "BFF", "Graph API", "Vitest"],
+      "url": null
+    },
+    {
+      "name": "Integración Qualtrics Gateway",
+      "badge": "Banca",
+      "icon": "api",
+      "description": "Proceso automático de distribución de encuestas a postulantes internos, como servicio independiente y dentro del pipeline HCM → Talento AI.",
+      "stack": [".NET 8", "SQL Server", "REST", "ELMAH"],
+      "url": null
+    },
+    {
+      "name": "Observabilidad corporativa RR.HH.",
+      "badge": "Banca",
+      "icon": "monitoring",
+      "description": "Migración de Serilog a BG.Common.Observability con trazas correlacionadas en Elasticsearch y exportación por OpenTelemetry.",
+      "stack": ["OpenTelemetry", "Elasticsearch", ".NET 8"],
+      "url": null
+    },
+    {
+      "name": "Catálogos centralizados con API Key",
+      "badge": "Titulación",
+      "icon": "hub",
+      "description": "Prototipo de sistema centralizado de catálogos para eliminar la duplicidad entre los sistemas del ecosistema bursátil.",
+      "stack": [".NET 8", "EF Core", "PostgreSQL", "React"],
+      "url": null
+    }
+  ],
   "education": [
     {
       "institution": "Universidad de Guayaquil",
@@ -180,18 +221,67 @@
     }
   ],
   "skills": {
-    "tags": [
-      ".NET (C#)",
-      "Angular",
-      "TypeScript",
-      "SQL Server",
-      "Entity Framework Core",
-      "Azure DevOps",
-      "Docker",
-      "Checkmarx",
-      "OpenTelemetry",
-      "Microsoft Graph",
-      "Git"
+    "categories": [
+      {
+        "label": "Backend",
+        "icon": "dns",
+        "tags": [
+          { "name": ".NET 8", "icon": "code" },
+          { "name": "C#", "icon": "terminal" },
+          { "name": "ASP.NET Core", "icon": "dns" },
+          { "name": "ABP Framework", "icon": "layers" },
+          { "name": "Entity Framework Core", "icon": "storage" }
+        ]
+      },
+      {
+        "label": "Frontend",
+        "icon": "web",
+        "tags": [
+          { "name": "Angular", "icon": "web" },
+          { "name": "TypeScript", "icon": "data_object" },
+          { "name": "React", "icon": "code" },
+          { "name": "Angular Material", "icon": "widgets" },
+          { "name": "Tailwind CSS", "icon": "palette" }
+        ]
+      },
+      {
+        "label": "Datos",
+        "icon": "database",
+        "tags": [
+          { "name": "SQL Server", "icon": "database" },
+          { "name": "Stored Procedures", "icon": "storage" },
+          { "name": "PostgreSQL", "icon": "database" }
+        ]
+      },
+      {
+        "label": "DevOps",
+        "icon": "cloud_sync",
+        "tags": [
+          { "name": "Azure DevOps", "icon": "cloud_sync" },
+          { "name": "CI/CD", "icon": "sync" },
+          { "name": "Docker", "icon": "deployed_code" },
+          { "name": "Helm", "icon": "deployed_code" },
+          { "name": "GitLab", "icon": "merge" }
+        ]
+      },
+      {
+        "label": "Seguridad",
+        "icon": "security",
+        "tags": [
+          { "name": "Checkmarx", "icon": "security" },
+          { "name": "OWASP Top 10", "icon": "gpp_maybe" },
+          { "name": "CSP / HSTS", "icon": "shield" }
+        ]
+      },
+      {
+        "label": "Observabilidad",
+        "icon": "monitoring",
+        "tags": [
+          { "name": "OpenTelemetry", "icon": "monitoring" },
+          { "name": "Elasticsearch", "icon": "query_stats" },
+          { "name": "Trazabilidad distribuida", "icon": "timeline" }
+        ]
+      }
     ],
     "groups": [
       {
