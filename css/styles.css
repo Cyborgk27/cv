@@ -404,3 +404,69 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
         transform: none !important;
     }
 }
+/* ==========================================================================
+   7. ACCIONES DEL HEADER / DESCARGA DEL CV
+   ========================================================================== */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    transform: translateY(-1px);
+}
+
+.btn-download i {
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   8. CERTIFICACIONES, IDIOMAS Y NOTAS ACADEMICAS
+   ========================================================================== */
+.cert-item,
+.lang-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.cert-meta,
+.lang-meta {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.education-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+}
+
+@media (max-width: 720px) {
+    .btn-download span {
+        display: none;
+    }
+}

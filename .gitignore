@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.lo_profile/
+*.bak
+.DS_Store
+Thumbs.db

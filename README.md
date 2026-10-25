@@ -1,44 +1,108 @@
-# 📄 Kevin Cepeda — CV Interactivo & Portafolio
+# 📄 Kevin Cepeda — CV Web + CV Imprimible
 
 [![Live Demo](https://img.shields.io/badge/demo-en%20vivo-brightgreen?style=for-the-badge&logo=githubpages)](https://cyborgk27.github.io/cv/)
+[![PDF](https://img.shields.io/badge/CV-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](https://cyborgk27.github.io/cv/dist/Kevin_Cepeda_CV.pdf)
 [![LinkedIn](https://img.shields.io/badge/linkedin-conectar-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/kevincepeda27/)
 
-Este repositorio contiene el código fuente de mi currículum web y portafolio profesional, diseñado para ofrecer una experiencia interactiva, rápida y accesible a reclutadores y líderes técnicos. 
+Currículum de **Kevin Cepeda** — Full Stack Developer (.NET / Angular) con foco en banca, seguridad de aplicaciones y observabilidad.
 
-🚀 **Puedes ver la versión en vivo aquí:** [cyborgk27.github.io/cv/](https://cyborgk27.github.io/cv/)
+Este repositorio mantiene **dos salidas desde una sola fuente de verdad**:
 
----
+| Salida | Archivo | Uso |
+|---|---|---|
+| CV web interactivo | `index.html` | Compartir por LinkedIn / WhatsApp |
+| CV imprimible | `dist/Kevin_Cepeda_CV.pdf` | Postulaciones y ATS |
 
-## 👨‍💻 Sobre Mí
-Soy **Ingeniero de Software** y **Desarrollador FullStack** basado en Guayaquil, Ecuador. Me especializo en el desarrollo y mantenimiento de sistemas ERP empresariales, aplicaciones web robustas y soluciones lógicas complejas utilizando tecnologías del ecosistema **.NET** para el backend y frameworks modernos como **Angular** y **React** para el frontend.
-
-## 🛠️ Stack Tecnológico del Proyecto
-Para mantener el sitio liviano, ultra rápido (enfocado en optimización Lighthouse) y fácil de mantener, decidí construirlo utilizando:
-
-- **Frontend:** HTML5, CSS3 (Variables nativas para soporte de temas) y JavaScript moderno (Vanilla JS).
-- **Interactividad:** Sistema de filtrado dinámico de experiencia laboral por tecnología (.NET, Angular, React) sin dependencias externas.
-- **Estilos y Componentes:** Diseño responsivo (Desktop/Mobile), soporte nativo para **Dark/Light Mode** y paquetización de iconos con Remix Icon.
-- **Despliegue:** Automatizado a través de GitHub Pages.
-
-## 📈 Características Principales
-- 🌗 **Modo Oscuro/Claro:** Selector dinámico con persistencia de tema (opcional).
-- 🔍 **Filtro de Experiencia:** Los reclutadores pueden filtrar mi historial laboral según la tecnología que requieran (.NET, Angular o React) con un solo clic.
-- 📱 **Diseño Responsive:** Optimizado para una lectura perfecta desde dispositivos móviles, tablets o pantallas de escritorio.
-- 🏎️ **Optimización SEO:** Configuración avanzada de Meta tags y Open Graph para previsualizaciones impecables al compartir el enlace en LinkedIn o WhatsApp.
+**Demo:** [cyborgk27.github.io/cv](https://cyborgk27.github.io/cv/) · **PDF:** [descargar](https://cyborgk27.github.io/cv/dist/Kevin_Cepeda_CV.pdf)
 
 ---
 
-## 🎯 Habilidades Destacadas (Resumen)
-- **Backend:** .NET 8 (C#), ABP Framework, Entity Framework, Lógica de negocio distribuida.
-- **Frontend:** Angular (TypeScript, Angular Material, Tailwind CSS), React.
-- **Bases de Datos:** SQL Server (Consultas complejas, Stored Procedures, Optimización de tiempos de respuesta).
-- **Herramientas & Entornos:** GitLab (Code Review, Merge Requests), GitHub, Reportes especializados (RDLC, ERP).
+## 🏗️ Arquitectura
+
+```
+cv/
+├─ data/
+│  └─ cv.es.json            ← ÚNICA fuente de verdad (contenido)
+├─ templates/
+│  ├─ index.html.tpl        ← maqueta del sitio (placeholders {{KEY}})
+│  └─ cv-harvard.odt        ← plantilla de impresión con marcadores <!--CV:*-->
+├─ scripts/
+│  ├─ build.py              ← orquesta todo
+│  ├─ build_site.py         ← JSON + tpl → index.html
+│  ├─ build_pdf.py          ← JSON + odt → dist/*.odt + *.pdf
+│  └─ init_template.py      ← utilidad de un solo uso (inserta marcadores en el ODT)
+├─ dist/
+│  ├─ Kevin_Cepeda_CV.pdf   ← generado
+│  └─ Kevin_Cepeda_CV.odt   ← generado
+├─ index.html               ← GENERADO (no editar a mano)
+├─ css/ · js/ · assets/
+└─ .github/workflows/build.yml
+```
+
+> ⚠️ `index.html` y `dist/` son **artefactos generados**. Si los editas a mano, el siguiente build los sobrescribe.
+
+---
+
+## ✍️ Cómo actualizar el CV
+
+1. Edita **solo** `data/cv.es.json`:
+   - `person` → nombre, titular, contacto, SEO
+   - `profile` → párrafo de perfil
+   - `experience[]` → `company`, `client`, `role`, `start`/`end` en formato `YYYY-MM`, `current`, `tech` (ids de `filters`), `bullets[]`
+   - `education`, `skills`, `certifications`, `languages`
+2. Regenera:
+
+```bash
+python scripts/build.py
+```
+
+3. Revisa `index.html` y `dist/Kevin_Cepeda_CV.pdf`, y haz commit de **ambos** junto con el JSON.
+
+### Reglas de contenido
+
+- **Fechas reales y verificables.** Deben coincidir con LinkedIn; si no, un background check lo detecta.
+- **Un cliente por entrada.** Los proyectos de un mismo empleador van como entradas separadas con la misma `company` y se agrupan automáticamente en el PDF (con `company_role` para la progresión de rol).
+- **Nada de tecnología sin respaldo** en algún bullet.
+
+### Agregar un idioma
+
+```bash
+cp data/cv.es.json data/cv.en.json   # traduce los valores, ajusta meta.lang
+python scripts/build.py --lang en
+```
+
+`build_site.py` emitirá `index.html` para ese idioma. Para publicar ambos, sirve `es` en la raíz y `en` en una subcarpeta (pendiente: selector de idioma en el header).
+
+---
+
+## 🧰 Requisitos
+
+- **Python 3.10+** (solo librería estándar)
+- **LibreOffice** (para exportar el PDF) — se detecta automáticamente en Windows, macOS y Linux
+
+## ✅ Verificación
+
+```bash
+python scripts/build.py --check   # falla si index.html está desincronizado o falta el PDF
+```
+
+En CI este comando corre antes del build: si alguien edita `index.html` a mano y olvida el JSON, el pipeline falla.
+
+---
+
+## 🚀 Despliegue
+
+Cada push a `main` dispara `.github/workflows/build.yml`:
+
+1. Instala LibreOffice + fuentes métricamente compatibles con Times New Roman (para que el paginado del PDF no cambie).
+2. Corre `--check` y luego `build.py`.
+3. Publica `index.html`, `css/`, `js/`, `assets/` y `dist/` en GitHub Pages.
 
 ---
 
 ## ✉️ Contacto
-¿Tienes una oportunidad vacante o te gustaría colaborar en un proyecto? ¡Hablemos!
 
 - **Email:** [cepedayupanqui.kevin@gmail.com](mailto:cepedayupanqui.kevin@gmail.com)
 - **LinkedIn:** [linkedin.com/in/kevincepeda27](https://www.linkedin.com/in/kevincepeda27/)
-- **WhatsApp:** [+593 991 713 814](https://wa.me/593991713814?text=Hola%20Kevin,%20vi%20tu%20CV%20en%20GitHub%20y%20me%20gustaría%20contactarte)
+- **GitHub:** [github.com/Cyborgk27](https://github.com/Cyborgk27)
+- **WhatsApp:** [+593 991 713 814](https://wa.me/593991713814)

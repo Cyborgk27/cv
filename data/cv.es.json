@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "lang": "es",
+    "updated": "2026-10-25",
+    "file_name": "Kevin_Cepeda_CV"
+  },
+  "person": {
+    "name": "Kevin Cepeda",
+    "title": "Ingeniero de Software & Desarrollador Full Stack",
+    "subtitle": "Full Stack Developer · .NET 8 & Angular",
+    "location": "Guayaquil, Guayas, Ecuador",
+    "email": "cepedayupanqui.kevin@gmail.com",
+    "phone": "+593 991 713 814",
+    "phone_raw": "+593991713814",
+    "whatsapp": "593991713814",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/kevincepeda27/",
+      "github": "https://github.com/Cyborgk27"
+    },
+    "seo": {
+      "description": "CV profesional de Kevin Cepeda, Full Stack Developer especializado en .NET 8 y Angular para el sector financiero: banca, seguridad de aplicaciones (Checkmarx, OWASP Top 10) y observabilidad con OpenTelemetry.",
+      "keywords": "Kevin Cepeda, Full Stack Developer, .NET 8, C#, Angular, TypeScript, SQL Server, Azure DevOps, Checkmarx, OWASP Top 10, OpenTelemetry, Elasticsearch, Microsoft Graph, banca, Guayaquil, Ecuador"
+    }
+  },
+  "profile": "Ingeniero de Software — Full Stack Developer (.NET / Angular) con más de 2 años de experiencia en sistemas empresariales del sector financiero y de recursos humanos. Experiencia comprobada en integración de servicios críticos, migración de plataformas legadas (.NET Core 3.1 → .NET 8), observabilidad con OpenTelemetry/Elasticsearch y remediación de vulnerabilidades (Checkmarx, OWASP Top 10) en aplicaciones bancarias de alta exposición. Destacado por mi capacidad de trabajo en equipo, resolución de problemas complejos e implementación de buenas prácticas de desarrollo.",
+  "filters": [
+    { "id": "all", "label": "Todos" },
+    { "id": "net", "label": ".NET (C#)" },
+    { "id": "angular", "label": "Angular" },
+    { "id": "react", "label": "React" },
+    { "id": "banca", "label": "Banca" },
+    { "id": "seguridad", "label": "Seguridad" }
+  ],
+  "experience": [
+    {
+      "company": "Integrity Solutions",
+      "client": "Banco Guayaquil",
+      "role": "Consultor de Desarrollo Full Stack",
+      "start": "2026-06",
+      "end": null,
+      "current": true,
+      "location": "Guayaquil, Ecuador",
+      "tech": ["net", "angular", "banca", "seguridad"],
+      "bullets": [
+        {
+          "lead": "Diseñé e implementé",
+          "text": "la integración del gateway Qualtrics vía Nexus para la distribución automática de encuestas a postulantes internos, como proceso independiente y dentro del pipeline HCM → Talento AI, con notificaciones SQL idempotentes y trazabilidad de errores."
+        },
+        {
+          "lead": "Lideré la migración",
+          "text": "de servicios legados de .NET Core 3.1 a .NET 8 e implementé la observabilidad corporativa con BG.Common.Observability (OpenTelemetry + Elasticsearch), migrando 18 archivos de logging y garantizando trazabilidad distribuida (traceId / spanId / correlationId) en todos los endpoints de RR.HH."
+        },
+        {
+          "lead": "Remedié vulnerabilidades SAST",
+          "text": "con Checkmarx en el API de RR.HH. (XSS almacenado CRITICAL, inyección LDAP HIGH y SQL Injection, además de hardening HTTP con CSP / HSTS, autorización a nivel de función y bypass de validación SSL) y en el Portal de Talento Humano (7 hallazgos críticos de SQL Injection, más de 100 de log forging y vulnerabilidades SCA en dependencias), alineado a OWASP Top 10."
+        },
+        {
+          "lead": "Desarrollé el Portal de Contraloría Financiera",
+          "text": "con Angular 21 (standalone, signals, OnPush), MSAL / Entra ID y patrón BFF (Backend for Frontend) sobre Microsoft Graph / SharePoint, con pruebas unitarias en Vitest y despliegue en Docker / Helm mediante pipelines CI/CD en Azure DevOps."
+        },
+        {
+          "lead": "Habilité el envío manual",
+          "text": "de solicitudes al proveedor de firma digital Eclipsoft en el Portal de Talento Humano y resolví defectos críticos de negocio en Planificación de Trabajo (Horarios vs Turnos), eliminando la dependencia de franjas horarias y destrabando los procesos de firma."
+        }
+      ]
+    },
+    {
+      "company": "Agrosoft Latam",
+      "client": "XASS4",
+      "client_note": "ERP agrícola y camaronero",
+      "role": "Desarrollador Full Stack",
+      "start": "2025-12",
+      "end": "2026-02",
+      "current": false,
+      "location": "Guayaquil, Ecuador",
+      "tech": ["net", "angular"],
+      "bullets": [
+        {
+          "lead": "Desarrollé y mantuve",
+          "text": "un sistema ERP multitenant (multi-tenancy) para el sector agrícola y camaronero, con backend en .NET 8 (ABP Framework) y frontend en Angular."
+        },
+        {
+          "lead": "Diseñé e implementé",
+          "text": "consultas complejas y lógica de datos optimizada en SQL Server mediante Entity Framework Core y Stored Procedures."
+        },
+        {
+          "lead": "Construí y ajusté",
+          "text": "el módulo de reportería especializada del sector camaronero, incluyendo el reporte crítico de aguaje."
+        },
+        {
+          "lead": "Automaticé el despliegue",
+          "text": "de cambios a producción (CI/CD) y soporté incidencias críticas en frontend y backend, garantizando la continuidad operativa del sistema."
+        }
+      ]
+    },
+    {
+      "company": "Viamatica",
+      "client": "Intecav",
+      "client_note": "Bolsa de Valores de Guayaquil",
+      "company_role": "Analista de Documentación y QA → Desarrollador Full Stack",
+      "role": "Desarrollador Full Stack",
+      "start": "2024-11",
+      "end": "2025-12",
+      "current": false,
+      "location": "Guayaquil, Ecuador",
+      "tech": ["net", "angular", "banca"],
+      "bullets": [
+        {
+          "lead": "Desarrollé y mantuve",
+          "text": "aplicaciones empresariales para la Bolsa de Valores de Guayaquil con C# en el backend y Angular 14 (TypeScript, Angular Material, Tailwind CSS) en el frontend, garantizando interfaces eficientes y escalables."
+        },
+        {
+          "lead": "Optimicé consultas complejas",
+          "text": "en SQL Server mediante Stored Procedures y diseñé reportes especializados con RDLC, reduciendo tiempos de respuesta y dando soporte a incidencias críticas."
+        },
+        {
+          "lead": "Lideré técnicamente al equipo",
+          "text": "brindando orientación funcional, arquitectónica y metodológica, y supervisé la calidad del código mediante code review y aprobación de Merge Requests en GitLab."
+        },
+        {
+          "lead": "Diseñé el marco de trabajo",
+          "text": "para la integración y promoción de cambios (Git Flow, versionado y CI/CD) y gestioné el despliegue de versiones en producción con IIS."
+        }
+      ]
+    },
+    {
+      "company": "Viamatica",
+      "client": "Banco Machala",
+      "client_note": "Módulo de Ahorro Programado",
+      "role": "Desarrollador Full Stack",
+      "start": "2025-09",
+      "end": "2025-10",
+      "current": false,
+      "location": "Guayaquil, Ecuador",
+      "tech": ["net", "angular", "react", "banca"],
+      "bullets": [
+        {
+          "lead": "Lideré el análisis y la migración",
+          "text": "del módulo de Ahorro Programado, planificando la transición de una interfaz en React hacia Angular, alineada con las APIs en .NET."
+        },
+        {
+          "lead": "Analicé requerimientos funcionales",
+          "text": "complejos y los transformé en especificaciones técnicas y maquetas de arquitectura frontend y backend."
+        },
+        {
+          "lead": "Investigué la lógica de negocio",
+          "text": "en sistemas legados IBM AS/400 y diseñé el flujo de datos entre la banca web moderna y el core bancario, bajo estándares de alta disponibilidad y seguridad financiera."
+        }
+      ]
+    },
+    {
+      "company": "Viamatica",
+      "client": "ARCSA",
+      "client_note": "ERP regulatorio",
+      "role": "Analista de Documentación y QA",
+      "start": "2024-05",
+      "end": "2024-07",
+      "current": false,
+      "location": "Guayaquil, Ecuador",
+      "tech": ["erp"],
+      "bullets": [
+        {
+          "lead": "Redacté documentación técnica",
+          "text": "de múltiples módulos del ERP y produje tutoriales audiovisuales para la capacitación de usuarios finales."
+        },
+        {
+          "lead": "Ejecuté pruebas funcionales (QA)",
+          "text": "y coordiné reuniones diarias con el cliente, traduciendo sus necesidades en reglas de negocio claras para el equipo técnico."
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad de Guayaquil",
+      "degree": "Grado en Ingeniería de Software",
+      "start": "2019-11",
+      "end": "2026-08",
+      "note": "Proyecto de titulación: Sistema Centralizado de Catálogos con API Key (.NET 8, React, PostgreSQL) · Marzo 2026"
+    }
+  ],
+  "skills": {
+    "tags": [
+      ".NET (C#)",
+      "Angular",
+      "TypeScript",
+      "SQL Server",
+      "Entity Framework Core",
+      "Azure DevOps",
+      "Docker",
+      "Checkmarx",
+      "OpenTelemetry",
+      "Microsoft Graph",
+      "Git"
+    ],
+    "groups": [
+      {
+        "label": "Lenguajes de Programación",
+        "items": "C#, TypeScript, JavaScript, SQL."
+      },
+      {
+        "label": "Frameworks y Librerías",
+        "items": ".NET 8, ASP.NET Core, ABP Framework, Angular (14+, 21 standalone), React, Angular Material, Tailwind CSS, jsPDF, RDLC."
+      },
+      {
+        "label": "Integraciones y APIs",
+        "items": "REST API / API REST, JSON, Microsoft Graph / SharePoint, Qualtrics (Nexus Gateway), MSAL / Entra ID, firma digital Eclipsoft, LDAP, ELMAH, patrón BFF (Backend for Frontend)."
+      },
+      {
+        "label": "Bases de Datos y Servidores",
+        "items": "SQL Server (Stored Procedures, optimización de consultas), Entity Framework Core, IIS (Internet Information Services)."
+      },
+      {
+        "label": "Observabilidad y DevOps",
+        "items": "BG.Common.Observability (OpenTelemetry / Elasticsearch), trazabilidad distribuida, Azure DevOps (pipelines CI/CD), GitLab, Git (Git Flow, branching), Docker, Helm, nginx."
+      },
+      {
+        "label": "Seguridad",
+        "items": "Checkmarx (SAST / SCA), OWASP Top 10, SQL Injection, XSS, LDAP Injection, hardening HTTP (CSP / HSTS), sanitización de salidas y parametrización SQL."
+      },
+      {
+        "label": "Metodologías y Prácticas",
+        "items": "Scrum, metodologías ágiles, Clean Code, SOLID, Clean Architecture, patrones de diseño, code review (Merge Requests), arquitectura ERP y multitenancia (multi-tenancy), gestión de requerimientos, pruebas unitarias y funcionales (QA)."
+      }
+    ]
+  },
+  "certifications": [
+    { "name": "Foundational C# with Microsoft", "issuer": "freeCodeCamp", "year": "2026" },
+    { "name": "SQL", "issuer": "OpenBootcamp", "year": "2022" },
+    { "name": "Git", "issuer": "OpenBootcamp", "year": "2022" }
+  ],
+  "languages": [
+    {
+      "name": "Español",
+      "level": "Nativo",
+      "display": "Español (nativo)"
+    },
+    {
+      "name": "Inglés técnico",
+      "level": "Lectura de documentación y comprensión auditiva (A2–B1 en desarrollo)",
+      "display": "Inglés técnico: lectura de documentación y comprensión auditiva (A2–B1 en desarrollo)"
+    }
+  ]
+}

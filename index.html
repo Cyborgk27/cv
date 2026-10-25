@@ -5,33 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-        Kevin Cepeda | Ingeniero de Software & Desarrollador FullStack
-    </title>
-    <meta name="description"
-        content="Portafolio y CV profesional de Kevin Cepeda, Ingeniero de Software especializado en desarrollo FullStack con .NET, Angular, React y arquitecturas de sistemas ERP." />
-    <meta name="keywords"
-        content="Kevin Cepeda, Ingeniero de Software, FullStack Developer, .NET, Angular, React, Guayaquil, Ecuador, Desarrollo ERP, C#" />
+    <title>Kevin Cepeda | Full Stack Developer · .NET 8 & Angular</title>
+    <meta name="description" content="CV profesional de Kevin Cepeda, Full Stack Developer especializado en .NET 8 y Angular para el sector financiero: banca, seguridad de aplicaciones (Checkmarx, OWASP Top 10) y observabilidad con OpenTelemetry." />
+    <meta name="keywords" content="Kevin Cepeda, Full Stack Developer, .NET 8, C#, Angular, TypeScript, SQL Server, Azure DevOps, Checkmarx, OWASP Top 10, OpenTelemetry, Elasticsearch, Microsoft Graph, banca, Guayaquil, Ecuador" />
     <meta name="author" content="Kevin Cepeda" />
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Kevin Cepeda | Ingeniero de Software" />
-    <meta property="og:description"
-        content="Desarrollador FullStack especializado en soluciones empresariales robustas con .NET y arquitecturas modernas en Angular/React." />
+    <meta property="og:title" content="Kevin Cepeda | Full Stack Developer · .NET 8 &amp; Angular" />
+    <meta property="og:description" content="CV profesional de Kevin Cepeda, Full Stack Developer especializado en .NET 8 y Angular para el sector financiero: banca, seguridad de aplicaciones (Checkmarx, OWASP Top 10) y observabilidad con OpenTelemetry." />
     <meta property="og:url" content="https://cyborgk27.github.io/cv/" />
     <meta property="og:site_name" content="CV Kevin Cepeda" />
     <meta name="google-site-verification" content="hOqyMc6OIu9wLZ1B5i_aWnVQgYrsB0Mj_NVgnsuqwto" />
 
-    <!-- Estilos locales -->
     <link rel="stylesheet" href="css/styles.css" />
-
-    <!-- Conexión rápida a la CDN (Optimización Lighthouse) -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-
-    <!-- Carga real de la hoja de estilos de iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
-
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 </head>
 
@@ -41,26 +30,23 @@
             <header class="cv-header">
                 <div class="header-title-container">
                     <h1>Kevin Cepeda</h1>
-                    <p class="subtitle">Ingeniero de Software</p>
+                    <p class="subtitle">Full Stack Developer · .NET 8 &amp; Angular</p>
                 </div>
-                <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema visual">
-                    <i class="ri-sun-line icon-sun" aria-hidden="true"></i>
-                    <i class="ri-moon-line icon-moon" aria-hidden="true"></i>
-                </button>
+                <div class="header-actions">
+                    <a class="btn-download" href="dist/Kevin_Cepeda_CV.pdf" download title="Descargar CV en PDF">
+                        <i class="ri-download-2-line" aria-hidden="true"></i>
+                        <span>PDF</span>
+                    </a>
+                    <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema visual">
+                        <i class="ri-sun-line icon-sun" aria-hidden="true"></i>
+                        <i class="ri-moon-line icon-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
             </header>
 
             <section id="profile">
                 <h2>Perfil Profesional</h2>
-                <p class="profile-text">
-                    Ingeniero de Software con sólida experiencia en desarrollo
-                    FullStack, especializado en tecnologías <strong>.NET</strong>,
-                    <strong>Angular</strong> y <strong>React</strong>. Profesional
-                    comprometido con experiencia en el desarrollo y mantenimiento de
-                    sistemas ERP empresariales, aplicaciones web robustas y soluciones
-                    tecnológicas innovadoras. Destacado por mi capacidad de trabajo en
-                    equipo, resolución de problemas complejos e implementación de buenas
-                    prácticas de desarrollo.
-                </p>
+                <p class="profile-text">Ingeniero de Software — Full Stack Developer (.NET / Angular) con más de 2 años de experiencia en sistemas empresariales del sector financiero y de recursos humanos. Experiencia comprobada en integración de servicios críticos, migración de plataformas legadas (.NET Core 3.1 → .NET 8), observabilidad con OpenTelemetry/Elasticsearch y remediación de vulnerabilidades (Checkmarx, OWASP Top 10) en aplicaciones bancarias de alta exposición. Destacado por mi capacidad de trabajo en equipo, resolución de problemas complejos e implementación de buenas prácticas de desarrollo.</p>
             </section>
 
             <section id="experience">
@@ -71,102 +57,115 @@
                     <button class="filter-btn" data-filter="net">.NET (C#)</button>
                     <button class="filter-btn" data-filter="angular">Angular</button>
                     <button class="filter-btn" data-filter="react">React</button>
+                    <button class="filter-btn" data-filter="banca">Banca</button>
+                    <button class="filter-btn" data-filter="seguridad">Seguridad</button>
                 </div>
+
+                                <article class="job-card" data-tech="net angular banca seguridad">
+                    <div class="job-header">
+                        <h3>Integrity Solutions <span class="project-name">| Banco Guayaquil</span></h3>
+                        <time class="job-date" datetime="2026-06">Jun 2026 - Actualidad</time>
+                    </div>
+                    <p class="job-role">Consultor de Desarrollo Full Stack</p>
+                    <p class="job-location">Guayaquil, Ecuador</p>
+                    <ul>
+                        <li>
+                            <strong>Diseñé e implementé</strong> la integración del gateway Qualtrics vía Nexus para la distribución automática de encuestas a postulantes internos, como proceso independiente y dentro del pipeline HCM → Talento AI, con notificaciones SQL idempotentes y trazabilidad de errores.
+                        </li>
+                        <li>
+                            <strong>Lideré la migración</strong> de servicios legados de .NET Core 3.1 a .NET 8 e implementé la observabilidad corporativa con BG.Common.Observability (OpenTelemetry + Elasticsearch), migrando 18 archivos de logging y garantizando trazabilidad distribuida (traceId / spanId / correlationId) en todos los endpoints de RR.HH.
+                        </li>
+                        <li>
+                            <strong>Remedié vulnerabilidades SAST</strong> con Checkmarx en el API de RR.HH. (XSS almacenado CRITICAL, inyección LDAP HIGH y SQL Injection, además de hardening HTTP con CSP / HSTS, autorización a nivel de función y bypass de validación SSL) y en el Portal de Talento Humano (7 hallazgos críticos de SQL Injection, más de 100 de log forging y vulnerabilidades SCA en dependencias), alineado a OWASP Top 10.
+                        </li>
+                        <li>
+                            <strong>Desarrollé el Portal de Contraloría Financiera</strong> con Angular 21 (standalone, signals, OnPush), MSAL / Entra ID y patrón BFF (Backend for Frontend) sobre Microsoft Graph / SharePoint, con pruebas unitarias en Vitest y despliegue en Docker / Helm mediante pipelines CI/CD en Azure DevOps.
+                        </li>
+                        <li>
+                            <strong>Habilité el envío manual</strong> de solicitudes al proveedor de firma digital Eclipsoft en el Portal de Talento Humano y resolví defectos críticos de negocio en Planificación de Trabajo (Horarios vs Turnos), eliminando la dependencia de franjas horarias y destrabando los procesos de firma.
+                        </li>
+                    </ul>
+                </article>
 
                 <article class="job-card" data-tech="net angular">
                     <div class="job-header">
                         <h3>Agrosoft Latam <span class="project-name">| XASS4</span></h3>
-                        <time class="job-date" datetime="2025-12">Dic 2025 - Mar 2026</time>
+                        <time class="job-date" datetime="2025-12">Dic 2025 - Feb 2026</time>
                     </div>
-                    <p class="job-role">Desarrollador FullStack</p>
+                    <p class="job-role">Desarrollador Full Stack</p>
                     <p class="job-location">Guayaquil, Ecuador</p>
                     <ul>
                         <li>
-                            <strong>Desarrollé y mantuve</strong> un sistema ERP multitenant
-                            orientado al sector agrícola y camaronero, utilizando una
-                            arquitectura robusta basada en .NET 8 (ABP Framework) para el
-                            backend y Angular para el frontend.
+                            <strong>Desarrollé y mantuve</strong> un sistema ERP multitenant (multi-tenancy) para el sector agrícola y camaronero, con backend en .NET 8 (ABP Framework) y frontend en Angular.
                         </li>
                         <li>
-                            <strong>Diseñé e implementé</strong> consultas complejas y
-                            lógica de datos optimizada en SQL Server mediante el uso de
-                            Entity Framework y Stored Procedures.
+                            <strong>Diseñé e implementé</strong> consultas complejas y lógica de datos optimizada en SQL Server mediante Entity Framework Core y Stored Procedures.
                         </li>
                         <li>
-                            <strong>Construí y ajusté</strong> el módulo de reportería
-                            especializada para el sector camaronero, incluyendo el
-                            desarrollo del reporte crítico de aguaje.
+                            <strong>Construí y ajusté</strong> el módulo de reportería especializada del sector camaronero, incluyendo el reporte crítico de aguaje.
+                        </li>
+                        <li>
+                            <strong>Automaticé el despliegue</strong> de cambios a producción (CI/CD) y soporté incidencias críticas en frontend y backend, garantizando la continuidad operativa del sistema.
                         </li>
                     </ul>
                 </article>
 
-                <article class="job-card" data-tech="net angular">
+                <article class="job-card" data-tech="net angular banca">
                     <div class="job-header">
                         <h3>Viamatica <span class="project-name">| Intecav</span></h3>
-                        <time class="job-date" datetime="2024-12">Dic 2024 - Dic 2025</time>
+                        <time class="job-date" datetime="2024-11">Nov 2024 - Dic 2025</time>
                     </div>
-                    <p class="job-role">Desarrollador FullStack</p>
+                    <p class="job-role">Desarrollador Full Stack</p>
                     <p class="job-location">Guayaquil, Ecuador</p>
                     <ul>
                         <li>
-                            <strong>Desarrollé y mantuve</strong> aplicaciones empresariales
-                            robustas utilizando C# (.NET) en el backend y Angular 14
-                            (TypeScript, Angular Material, Tailwind CSS) en el frontend.
+                            <strong>Desarrollé y mantuve</strong> aplicaciones empresariales para la Bolsa de Valores de Guayaquil con C# en el backend y Angular 14 (TypeScript, Angular Material, Tailwind CSS) en el frontend, garantizando interfaces eficientes y escalables.
                         </li>
                         <li>
-                            <strong>Optimicé</strong> consultas complejas en SQL Server
-                            mediante Stored Procedures y diseñé reportes especializados con
-                            RDLC, reduciendo tiempos de respuesta.
+                            <strong>Optimicé consultas complejas</strong> en SQL Server mediante Stored Procedures y diseñé reportes especializados con RDLC, reduciendo tiempos de respuesta y dando soporte a incidencias críticas.
                         </li>
                         <li>
-                            <strong>Supervisé</strong> la calidad del código mediante la
-                            revisión y aprobación de Merge Requests en GitLab, promoviendo
-                            las mejores prácticas.
+                            <strong>Lideré técnicamente al equipo</strong> brindando orientación funcional, arquitectónica y metodológica, y supervisé la calidad del código mediante code review y aprobación de Merge Requests en GitLab.
+                        </li>
+                        <li>
+                            <strong>Diseñé el marco de trabajo</strong> para la integración y promoción de cambios (Git Flow, versionado y CI/CD) y gestioné el despliegue de versiones en producción con IIS.
                         </li>
                     </ul>
                 </article>
 
-                <article class="job-card" data-tech="net react angular">
+                <article class="job-card" data-tech="net angular react banca">
                     <div class="job-header">
-                        <h3>
-                            Viamatica <span class="project-name">| Banco Machala</span>
-                        </h3>
-                        <time class="job-date" datetime="2024-09">Sep 2024 - Nov 2024</time>
+                        <h3>Viamatica <span class="project-name">| Banco Machala</span></h3>
+                        <time class="job-date" datetime="2025-09">Sep 2025 - Oct 2025</time>
                     </div>
-                    <p class="job-role">Desarrollador FullStack (Ahorro programado)</p>
+                    <p class="job-role">Desarrollador Full Stack</p>
                     <p class="job-location">Guayaquil, Ecuador</p>
                     <ul>
                         <li>
-                            <strong>Lideré la migración</strong> del módulo de Ahorro
-                            Programado, planificando la transición tecnológica de una
-                            interfaz existente en React hacia una arquitectura moderna en
-                            Angular, alineada con APIs en .NET.
+                            <strong>Lideré el análisis y la migración</strong> del módulo de Ahorro Programado, planificando la transición de una interfaz en React hacia Angular, alineada con las APIs en .NET.
                         </li>
                         <li>
-                            <strong>Investigué y examiné</strong> la lógica de negocio
-                            alojada en sistemas legados IBM AS/400, comprendiendo el flujo
-                            de datos e integraciones necesarias.
+                            <strong>Analicé requerimientos funcionales</strong> complejos y los transformé en especificaciones técnicas y maquetas de arquitectura frontend y backend.
+                        </li>
+                        <li>
+                            <strong>Investigué la lógica de negocio</strong> en sistemas legados IBM AS/400 y diseñé el flujo de datos entre la banca web moderna y el core bancario, bajo estándares de alta disponibilidad y seguridad financiera.
                         </li>
                     </ul>
                 </article>
 
-                <article class="job-card" data-tech="documentacion erp">
+                <article class="job-card" data-tech="erp">
                     <div class="job-header">
                         <h3>Viamatica <span class="project-name">| ARCSA</span></h3>
-                        <time class="job-date" datetime="2024-05">May 2024 - Ago 2024</time>
+                        <time class="job-date" datetime="2024-05">May 2024 - Jul 2024</time>
                     </div>
-                    <p class="job-role">Analista de Documentación</p>
+                    <p class="job-role">Analista de Documentación y QA</p>
                     <p class="job-location">Guayaquil, Ecuador</p>
                     <ul>
                         <li>
-                            <strong>Diseñé y produje</strong> tutoriales audiovisuales e
-                            instructivos didácticos basados en documentación técnica
-                            compleja para usuarios finales del sistema ERP.
+                            <strong>Redacté documentación técnica</strong> de múltiples módulos del ERP y produje tutoriales audiovisuales para la capacitación de usuarios finales.
                         </li>
                         <li>
-                            <strong>Colaboré</strong> en el aseguramiento de calidad (QA)
-                            mediante la ejecución de pruebas del sistema y la validación
-                            minuciosa de requisitos funcionales.
+                            <strong>Ejecuté pruebas funcionales (QA)</strong> y coordiné reuniones diarias con el cliente, traduciendo sus necesidades en reglas de negocio claras para el equipo técnico.
                         </li>
                     </ul>
                 </article>
@@ -178,28 +177,21 @@
                 <h2>Contacto</h2>
                 <nav aria-label="Enlaces de contacto">
                     <ul class="contact-list">
-                        <li>
+                                                <li>
                             <i class="ri-mail-line icon" aria-hidden="true"></i>
-                            <a href="mailto:cepedayupanqui.kevin@gmail.com"
-                                title="Enviar correo electrónico">cepedayupanqui.kevin@gmail.com</a>
+                            <a href="mailto:cepedayupanqui.kevin@gmail.com" target="_blank" rel="noopener noreferrer" title="Enviar correo electrónico">cepedayupanqui.kevin@gmail.com</a>
                         </li>
                         <li>
                             <i class="ri-linkedin-box-line icon" aria-hidden="true"></i>
-                            <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank"
-                                rel="noopener noreferrer"
-                                title="Visitar perfil de LinkedIn">linkedin.com/in/kevincepeda27</a>
+                            <a href="https://www.linkedin.com/in/kevincepeda27/" target="_blank" rel="noopener noreferrer" title="Visitar perfil de LinkedIn">linkedin.com/in/kevincepeda27</a>
                         </li>
                         <li>
                             <i class="ri-github-line icon" aria-hidden="true"></i>
-                            <a href="https://github.com/Cyborgk27" target="_blank" rel="noopener noreferrer"
-                                title="Visitar perfil de GitHub">github.com/Cyborgk27</a>
+                            <a href="https://github.com/Cyborgk27" target="_blank" rel="noopener noreferrer" title="Visitar perfil de GitHub">github.com/Cyborgk27</a>
                         </li>
                         <li>
                             <i class="ri-whatsapp-line icon" aria-hidden="true"></i>
-                            <a href="https://wa.me/593991713814?text=Hola,%20vi%20tu%20CV%20y%20me%20gustaría%20contactarte"
-                                target="_blank" rel="noopener noreferrer" title="Enviar mensaje por WhatsApp">
-                                +593 991 713 814
-                            </a>
+                            <a href="https://wa.me/593991713814?text=Hola,%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte" target="_blank" rel="noopener noreferrer" title="Enviar mensaje por WhatsApp">+593 991 713 814</a>
                         </li>
                     </ul>
                 </nav>
@@ -207,10 +199,11 @@
 
             <section id="education">
                 <h2>Educación</h2>
-                <article class="education-card">
+                                <article class="education-card">
                     <h3>Universidad de Guayaquil</h3>
-                    <p class="education-degree">Ingeniería de Software</p>
-                    <time class="sidebar-date" datetime="2019/2026">2019 - 2026</time>
+                    <p class="education-degree">Grado en Ingeniería de Software</p>
+                    <time class="sidebar-date" datetime="2019-11/2026-08">2019 - 2026</time>
+                    <p class="education-note">Proyecto de titulación: Sistema Centralizado de Catálogos con API Key (.NET 8, React, PostgreSQL) · Marzo 2026</p>
                 </article>
             </section>
 
@@ -219,12 +212,33 @@
                 <div class="skills-container">
                     <span class="skill-tag">.NET (C#)</span>
                     <span class="skill-tag">Angular</span>
-                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">TypeScript</span>
                     <span class="skill-tag">SQL Server</span>
-                    <span class="skill-tag">Entity Framework</span>
-                    <span class="skill-tag">Architecture (ERP)</span>
-                    <span class="skill-tag">GitLab / CI-CD</span>
+                    <span class="skill-tag">Entity Framework Core</span>
+                    <span class="skill-tag">Azure DevOps</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Checkmarx</span>
+                    <span class="skill-tag">OpenTelemetry</span>
+                    <span class="skill-tag">Microsoft Graph</span>
+                    <span class="skill-tag">Git</span>
                 </div>
+            </section>
+
+            <section id="certifications">
+                <h2>Certificaciones</h2>
+                <ul class="cert-list">
+                    <li class="cert-item"><strong>Foundational C# with Microsoft</strong><span class="cert-meta">freeCodeCamp · 2026</span></li>
+                    <li class="cert-item"><strong>SQL</strong><span class="cert-meta">OpenBootcamp · 2022</span></li>
+                    <li class="cert-item"><strong>Git</strong><span class="cert-meta">OpenBootcamp · 2022</span></li>
+                </ul>
+            </section>
+
+            <section id="languages">
+                <h2>Idiomas</h2>
+                <ul class="lang-list">
+                    <li class="lang-item"><strong>Español</strong><span class="lang-meta">Nativo</span></li>
+                    <li class="lang-item"><strong>Inglés técnico</strong><span class="lang-meta">Lectura de documentación y comprensión auditiva (A2–B1 en desarrollo)</span></li>
+                </ul>
             </section>
         </aside>
     </main>
