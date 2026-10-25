@@ -11,6 +11,7 @@ import html
 import json
 import os
 import sys
+from datetime import date
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 TEMPLATE = os.path.join(ROOT, "templates", "index.html.tpl")
@@ -47,6 +48,36 @@ def fmt_range(start: str, end: str | None, current: bool) -> str:
     return f"{fmt_month(start)} - {fmt_month(end)}"
 
 
+def group_by_company(experience: list[dict]) -> list[dict]:
+    groups: list[dict] = []
+    for job in experience:
+        if groups and groups[-1]["company"] == job["company"]:
+            groups[-1]["jobs"].append(job)
+        else:
+            groups.append({"company": job["company"], "jobs": [job]})
+    return groups
+
+
+def months_between(start: str, end: str | None) -> int:
+    y1, m1 = int(start[:4]), int(start[5:7])
+    if end:
+        y2, m2 = int(end[:4]), int(end[5:7])
+    else:
+        today = date.today()
+        y2, m2 = today.year, today.month
+    return max(1, (y2 - y1) * 12 + (m2 - m1) + 1)
+
+
+def fmt_duration(months: int) -> str:
+    years, rest = divmod(months, 12)
+    parts = []
+    if years:
+        parts.append(f"{years} año" + ("s" if years > 1 else ""))
+    if rest:
+        parts.append(f"{rest} mes" + ("es" if rest > 1 else ""))
+    return " y ".join(parts) if parts else "1 mes"
+
+
 def render_profile(cv: dict) -> str:
     return f'<p class="profile-text">{esc(cv["profile"])}</p>'
 
@@ -62,31 +93,50 @@ def render_filters(cv: dict) -> str:
 
 
 def render_experience(cv: dict) -> str:
-    cards = []
-    for job in cv["experience"]:
-        end_iso = "present" if job["current"] else job["end"]
-        bullets = []
-        for bullet in job["bullets"]:
-            bullets.append(
-                f'                        <li>\n'
-                f'                            <strong>{esc(bullet["lead"])}</strong> {esc(bullet["text"])}\n'
-                f"                        </li>"
+    blocks = []
+    for group in group_by_company(cv["experience"]):
+        jobs = group["jobs"]
+        start = min(j["start"] for j in jobs)
+        ends = [j["end"] for j in jobs if j["end"]]
+        current = any(j["current"] for j in jobs)
+        end = max(ends) if ends else None
+        months = months_between(start, end)
+        meta = f"{fmt_range(start, end, current)} · {fmt_duration(months)}"
+
+        positions = []
+        for job in jobs:
+            client = ""
+            if job.get("client"):
+                note = f' <span class="position-note">· {esc(job["client_note"])}</span>' if job.get("client_note") else ""
+                client = f'\n                        <p class="position-client">{esc(job["client"])}{note}</p>'
+            bullets = "\n".join(
+                f'                                <li><strong>{esc(b["lead"])}</strong> {esc(b["text"])}</li>'
+                for b in job["bullets"]
             )
-        client = f' <span class="project-name">| {esc(job["client"])}</span>' if job.get("client") else ""
-        cards.append(
-            f"""                <article class="job-card" data-tech="{esc(' '.join(job['tech']))}">
-                    <div class="job-header">
-                        <h3>{esc(job['company'])}{client}</h3>
-                        <time class="job-date" datetime="{esc(job['start'])}">{esc(fmt_range(job['start'], job['end'], job['current']))}</time>
+            positions.append(
+                f"""                    <li class="position" data-tech="{esc(' '.join(job['tech']))}">
+                        <div class="position-header">
+                            <h4 class="position-role">{esc(job['role'])}</h4>
+                            <time class="position-date" datetime="{esc(job['start'])}">{esc(fmt_range(job['start'], job['end'], job['current']))}</time>
+                        </div>{client}
+                        <ul class="position-bullets">
+{bullets}
+                        </ul>
+                    </li>"""
+            )
+
+        blocks.append(
+            f"""                <article class="job-card company-block">
+                    <div class="company-header">
+                        <h3 class="company-name">{esc(group['company'])}</h3>
+                        <p class="company-meta">{esc(meta)}</p>
                     </div>
-                    <p class="job-role">{esc(job['role'])}</p>
-                    <p class="job-location">{esc(job['location'])}</p>
-                    <ul>
-{chr(10).join(bullets)}
-                    </ul>
+                    <ol class="positions">
+{chr(10).join(positions)}
+                    </ol>
                 </article>"""
         )
-    return "\n\n".join(cards)
+    return "\n\n".join(blocks)
 
 
 def render_contact(cv: dict) -> str:

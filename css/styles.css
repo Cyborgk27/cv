@@ -3,14 +3,14 @@
    ========================================================================== */
 :root {
     /* Paleta Corporativa (Modo Claro Premium) */
-    --bg-color: #fcfbf9;        /* Blanco cálido/hueso de alta gama */
-    --text-main: #1c1d1f;       /* Negro carbón suave, elegante */
+    --bg-color: #fcfbf9;        /* Blanco cÃ¡lido/hueso de alta gama */
+    --text-main: #1c1d1f;       /* Negro carbÃ³n suave, elegante */
     --text-muted: #56595f;      /* Gris sofisticado para detalles */
     --accent-color: #1a365d;    /* Azul marino ejecutivo profundo */
     --border-subtle: #e4e4e7;   /* Gris ultra claro para separadores */
     --bg-tag: #ffffff;          /* Fondo base para componentes aislados */
     
-    /* Tipografías con Contraste Editorial */
+    /* TipografÃ­as con Contraste Editorial */
     --font-display: "Georgia", serif;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -25,7 +25,7 @@ body.dark-mode {
     --bg-tag: #1e293b;         /* Fondo adaptativo para tags en oscuro */
 }
 
-/* Reset Estructural y Semántico */
+/* Reset Estructural y SemÃ¡ntico */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -43,11 +43,11 @@ body {
 }
 
 ul {
-    list-style: none; /* Eliminación global de viñetas nativas */
+    list-style: none; /* EliminaciÃ³n global de viÃ±etas nativas */
 }
 
 /* ==========================================================================
-   2. ESTRUCTURA GLOBAL / LAYOUT ASIMÉTRICO
+   2. ESTRUCTURA GLOBAL / LAYOUT ASIMÃ‰TRICO
    ========================================================================== */
 .cv-container {
     max-width: 1040px;
@@ -61,7 +61,7 @@ section {
     margin-bottom: 3rem;
 }
 
-/* Títulos de sección estilo "editorial" */
+/* TÃ­tulos de secciÃ³n estilo "editorial" */
 h2 {
     font-family: var(--font-body);
     font-size: 0.85rem;
@@ -75,7 +75,7 @@ h2 {
 }
 
 /* ==========================================================================
-   3. COMPONENTES DE LA SECCIÓN PRINCIPAL (IZQUIERDA)
+   3. COMPONENTES DE LA SECCIÃ“N PRINCIPAL (IZQUIERDA)
    ========================================================================== */
 
 /* Encabezado Principal */
@@ -208,7 +208,7 @@ h2 {
     padding-left: 2rem;
 }
 
-/* Información de Contacto */
+/* InformaciÃ³n de Contacto */
 .contact-list li {
     display: flex;
     align-items: center;
@@ -229,7 +229,7 @@ h2 {
     border-bottom: 1px solid var(--accent-color);
 }
 
-/* Formación Académica */
+/* FormaciÃ³n AcadÃ©mica */
 .education-card h3 {
     font-family: var(--font-display);
     font-size: 1.15rem;
@@ -267,10 +267,10 @@ h2 {
 }
 
 /* ==========================================================================
-   5. UI UTILITIES / ELEMENTOS DE INTERFAZ AGRÓSTICOS
+   5. UI UTILITIES / ELEMENTOS DE INTERFAZ AGRÃ“STICOS
    ========================================================================== */
 
-/* Gestión de Iconos Vectoriales (Remix Icon) */
+/* GestiÃ³n de Iconos Vectoriales (Remix Icon) */
 .icon {
     color: var(--accent-color);
     font-size: 1.15rem;
@@ -280,7 +280,7 @@ h2 {
     transition: color 0.2s ease;
 }
 
-/* Botón Conmutador de Temas Visuales */
+/* BotÃ³n Conmutador de Temas Visuales */
 .theme-btn {
     background: none;
     border: 1px solid var(--border-subtle);
@@ -305,7 +305,7 @@ h2 {
     color: var(--text-main);
 }
 
-/* Declaración Dinámica para Iconos de Sol/Luna */
+/* DeclaraciÃ³n DinÃ¡mica para Iconos de Sol/Luna */
 .theme-btn .icon-sun { display: none; }
 .theme-btn .icon-moon { display: inline-flex; }
 
@@ -329,7 +329,7 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
     transform: translateY(0);
 }
 
-/* Ocultación Estricta para Filtrado Lógico (Cero Colisiones de Flujo) */
+/* OcultaciÃ³n Estricta para Filtrado LÃ³gico (Cero Colisiones de Flujo) */
 .job-card.is-hidden {
     opacity: 0;
     transform: scale(0.95);
@@ -346,7 +346,7 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
    7. RESPONSIVIDAD & REGLAS DE MEDIOS (MEDIA QUERIES)
    ========================================================================== */
 
-/* Ajustes Adaptativos para Pantallas Móviles y Tablets */
+/* Ajustes Adaptativos para Pantallas MÃ³viles y Tablets */
 @media (max-width: 768px) {
     .cv-container {
         grid-template-columns: 1fr;
@@ -373,7 +373,7 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
     }
 }
 
-/* Normalización Estricta para Exportación e Impresión Profesional a PDF */
+/* NormalizaciÃ³n Estricta para ExportaciÃ³n e ImpresiÃ³n Profesional a PDF */
 @media print {
     body {
         background-color: #ffffff !important;
@@ -382,8 +382,9 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
     }
     
     .theme-btn,
+    .btn-download,
     .filter-container {
-        display: none !important; /* Exclusión de UI interactiva en documentos físicos */
+        display: none !important; /* ExclusiÃ³n de UI interactiva en documentos fÃ­sicos */
     }
     
     .cv-container {
@@ -405,7 +406,7 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
     }
 }
 /* ==========================================================================
-   7. ACCIONES DEL HEADER / DESCARGA DEL CV
+   10. ACCIONES DEL HEADER / DESCARGA DEL CV
    ========================================================================== */
 .header-actions {
     display: flex;
@@ -441,7 +442,7 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
 }
 
 /* ==========================================================================
-   8. CERTIFICACIONES, IDIOMAS Y NOTAS ACADEMICAS
+   11. CERTIFICACIONES, IDIOMAS Y NOTAS ACADEMICAS
    ========================================================================== */
 .cert-item,
 .lang-item {
@@ -468,5 +469,130 @@ body.dark-mode .theme-btn .icon-moon { display: none; }
 @media (max-width: 720px) {
     .btn-download span {
         display: none;
+    }
+}
+
+/* ==========================================================================
+   9. AGRUPACIÃ“N POR EMPLEADOR (ESTILO LINKEDIN)
+   ========================================================================== */
+.company-block {
+    margin-bottom: 2.75rem;
+}
+
+.company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.company-name {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.company-meta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* LÃ­nea vertical que agrupa los cargos del mismo empleador */
+.positions {
+    list-style: none;
+    border-left: 2px solid var(--border-subtle);
+    margin-left: 0.4rem;
+    padding-left: 1.75rem;
+}
+
+.position {
+    position: relative;
+    padding-bottom: 1.75rem;
+}
+
+.position:last-child {
+    padding-bottom: 0;
+}
+
+.position::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.75rem - 6px);
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 2px solid var(--accent-color);
+}
+
+.position-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.15rem 1rem;
+}
+
+.position-role {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.position-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    white-space: nowrap;
+}
+
+.position-client {
+    font-size: 0.92rem;
+    color: var(--text-main);
+    margin-top: 0.1rem;
+}
+
+.position-note {
+    color: var(--text-muted);
+}
+
+.position-bullets {
+    margin-top: 0.5rem;
+}
+
+.position-bullets li {
+    margin-bottom: 0.55rem;
+    font-size: 0.97rem;
+    color: var(--text-main);
+    text-align: justify;
+}
+
+.position-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+/* Ocultar cargos que no coinciden con el filtro */
+.position.is-hidden {
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .positions {
+        padding-left: 1.15rem;
+    }
+
+    .position::before {
+        left: calc(-1.15rem - 6px);
+    }
+
+    .company-header,
+    .position-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

@@ -61,113 +61,94 @@
                     <button class="filter-btn" data-filter="seguridad">Seguridad</button>
                 </div>
 
-                                <article class="job-card" data-tech="net angular banca seguridad">
-                    <div class="job-header">
-                        <h3>Integrity Solutions <span class="project-name">| Banco Guayaquil</span></h3>
-                        <time class="job-date" datetime="2026-06">Jun 2026 - Actualidad</time>
+                                <article class="job-card company-block">
+                    <div class="company-header">
+                        <h3 class="company-name">Integrity Solutions</h3>
+                        <p class="company-meta">Jun 2026 - Actualidad · 5 meses</p>
                     </div>
-                    <p class="job-role">Consultor de Desarrollo Full Stack</p>
-                    <p class="job-location">Guayaquil, Ecuador</p>
-                    <ul>
-                        <li>
-                            <strong>Diseñé e implementé</strong> la integración del gateway Qualtrics vía Nexus para la distribución automática de encuestas a postulantes internos, como proceso independiente y dentro del pipeline HCM → Talento AI, con notificaciones SQL idempotentes y trazabilidad de errores.
-                        </li>
-                        <li>
-                            <strong>Lideré la migración</strong> de servicios legados de .NET Core 3.1 a .NET 8 e implementé la observabilidad corporativa con BG.Common.Observability (OpenTelemetry + Elasticsearch), migrando 18 archivos de logging y garantizando trazabilidad distribuida (traceId / spanId / correlationId) en todos los endpoints de RR.HH.
-                        </li>
-                        <li>
-                            <strong>Remedié vulnerabilidades SAST</strong> con Checkmarx en el API de RR.HH. (XSS almacenado CRITICAL, inyección LDAP HIGH y SQL Injection, además de hardening HTTP con CSP / HSTS, autorización a nivel de función y bypass de validación SSL) y en el Portal de Talento Humano (7 hallazgos críticos de SQL Injection, más de 100 de log forging y vulnerabilidades SCA en dependencias), alineado a OWASP Top 10.
-                        </li>
-                        <li>
-                            <strong>Desarrollé el Portal de Contraloría Financiera</strong> con Angular 21 (standalone, signals, OnPush), MSAL / Entra ID y patrón BFF (Backend for Frontend) sobre Microsoft Graph / SharePoint, con pruebas unitarias en Vitest y despliegue en Docker / Helm mediante pipelines CI/CD en Azure DevOps.
-                        </li>
-                        <li>
-                            <strong>Habilité el envío manual</strong> de solicitudes al proveedor de firma digital Eclipsoft en el Portal de Talento Humano y resolví defectos críticos de negocio en Planificación de Trabajo (Horarios vs Turnos), eliminando la dependencia de franjas horarias y destrabando los procesos de firma.
-                        </li>
-                    </ul>
+                    <ol class="positions">
+                    <li class="position" data-tech="net angular banca seguridad">
+                        <div class="position-header">
+                            <h4 class="position-role">Consultor de Desarrollo Full Stack</h4>
+                            <time class="position-date" datetime="2026-06">Jun 2026 - Actualidad</time>
+                        </div>
+                        <p class="position-client">Banco Guayaquil</p>
+                        <ul class="position-bullets">
+                                <li><strong>Diseñé e implementé</strong> la integración del gateway Qualtrics vía Nexus para la distribución automática de encuestas a postulantes internos, como proceso independiente y dentro del pipeline HCM → Talento AI, con notificaciones SQL idempotentes y trazabilidad de errores.</li>
+                                <li><strong>Lideré la migración</strong> de servicios legados de .NET Core 3.1 a .NET 8 e implementé la observabilidad corporativa con BG.Common.Observability (OpenTelemetry + Elasticsearch), migrando 18 archivos de logging y garantizando trazabilidad distribuida (traceId / spanId / correlationId) en todos los endpoints de RR.HH.</li>
+                                <li><strong>Remedié vulnerabilidades SAST</strong> con Checkmarx en el API de RR.HH. (XSS almacenado CRITICAL, inyección LDAP HIGH y SQL Injection, además de hardening HTTP con CSP / HSTS, autorización a nivel de función y bypass de validación SSL) y en el Portal de Talento Humano (7 hallazgos críticos de SQL Injection, más de 100 de log forging y vulnerabilidades SCA en dependencias), alineado a OWASP Top 10.</li>
+                                <li><strong>Desarrollé el Portal de Contraloría Financiera</strong> con Angular 21 (standalone, signals, OnPush), MSAL / Entra ID y patrón BFF (Backend for Frontend) sobre Microsoft Graph / SharePoint, con pruebas unitarias en Vitest y despliegue en Docker / Helm mediante pipelines CI/CD en Azure DevOps.</li>
+                                <li><strong>Habilité el envío manual</strong> de solicitudes al proveedor de firma digital Eclipsoft en el Portal de Talento Humano y resolví defectos críticos de negocio en Planificación de Trabajo (Horarios vs Turnos), eliminando la dependencia de franjas horarias y destrabando los procesos de firma.</li>
+                        </ul>
+                    </li>
+                    </ol>
                 </article>
 
-                <article class="job-card" data-tech="net angular">
-                    <div class="job-header">
-                        <h3>Agrosoft Latam <span class="project-name">| XASS4</span></h3>
-                        <time class="job-date" datetime="2025-12">Dic 2025 - Feb 2026</time>
+                <article class="job-card company-block">
+                    <div class="company-header">
+                        <h3 class="company-name">Agrosoft Latam</h3>
+                        <p class="company-meta">Dic 2025 - Feb 2026 · 3 meses</p>
                     </div>
-                    <p class="job-role">Desarrollador Full Stack</p>
-                    <p class="job-location">Guayaquil, Ecuador</p>
-                    <ul>
-                        <li>
-                            <strong>Desarrollé y mantuve</strong> un sistema ERP multitenant (multi-tenancy) para el sector agrícola y camaronero, con backend en .NET 8 (ABP Framework) y frontend en Angular.
-                        </li>
-                        <li>
-                            <strong>Diseñé e implementé</strong> consultas complejas y lógica de datos optimizada en SQL Server mediante Entity Framework Core y Stored Procedures.
-                        </li>
-                        <li>
-                            <strong>Construí y ajusté</strong> el módulo de reportería especializada del sector camaronero, incluyendo el reporte crítico de aguaje.
-                        </li>
-                        <li>
-                            <strong>Automaticé el despliegue</strong> de cambios a producción (CI/CD) y soporté incidencias críticas en frontend y backend, garantizando la continuidad operativa del sistema.
-                        </li>
-                    </ul>
+                    <ol class="positions">
+                    <li class="position" data-tech="net angular">
+                        <div class="position-header">
+                            <h4 class="position-role">Desarrollador Full Stack</h4>
+                            <time class="position-date" datetime="2025-12">Dic 2025 - Feb 2026</time>
+                        </div>
+                        <p class="position-client">XASS4 <span class="position-note">· ERP agrícola y camaronero</span></p>
+                        <ul class="position-bullets">
+                                <li><strong>Desarrollé y mantuve</strong> un sistema ERP multitenant (multi-tenancy) para el sector agrícola y camaronero, con backend en .NET 8 (ABP Framework) y frontend en Angular.</li>
+                                <li><strong>Diseñé e implementé</strong> consultas complejas y lógica de datos optimizada en SQL Server mediante Entity Framework Core y Stored Procedures.</li>
+                                <li><strong>Construí y ajusté</strong> el módulo de reportería especializada del sector camaronero, incluyendo el reporte crítico de aguaje.</li>
+                                <li><strong>Automaticé el despliegue</strong> de cambios a producción (CI/CD) y soporté incidencias críticas en frontend y backend, garantizando la continuidad operativa del sistema.</li>
+                        </ul>
+                    </li>
+                    </ol>
                 </article>
 
-                <article class="job-card" data-tech="net angular banca">
-                    <div class="job-header">
-                        <h3>Viamatica <span class="project-name">| Intecav</span></h3>
-                        <time class="job-date" datetime="2024-11">Nov 2024 - Dic 2025</time>
+                <article class="job-card company-block">
+                    <div class="company-header">
+                        <h3 class="company-name">Viamatica</h3>
+                        <p class="company-meta">May 2024 - Dic 2025 · 1 año y 8 meses</p>
                     </div>
-                    <p class="job-role">Desarrollador Full Stack</p>
-                    <p class="job-location">Guayaquil, Ecuador</p>
-                    <ul>
-                        <li>
-                            <strong>Desarrollé y mantuve</strong> aplicaciones empresariales para la Bolsa de Valores de Guayaquil con C# en el backend y Angular 14 (TypeScript, Angular Material, Tailwind CSS) en el frontend, garantizando interfaces eficientes y escalables.
-                        </li>
-                        <li>
-                            <strong>Optimicé consultas complejas</strong> en SQL Server mediante Stored Procedures y diseñé reportes especializados con RDLC, reduciendo tiempos de respuesta y dando soporte a incidencias críticas.
-                        </li>
-                        <li>
-                            <strong>Lideré técnicamente al equipo</strong> brindando orientación funcional, arquitectónica y metodológica, y supervisé la calidad del código mediante code review y aprobación de Merge Requests en GitLab.
-                        </li>
-                        <li>
-                            <strong>Diseñé el marco de trabajo</strong> para la integración y promoción de cambios (Git Flow, versionado y CI/CD) y gestioné el despliegue de versiones en producción con IIS.
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="job-card" data-tech="net angular react banca">
-                    <div class="job-header">
-                        <h3>Viamatica <span class="project-name">| Banco Machala</span></h3>
-                        <time class="job-date" datetime="2025-09">Sep 2025 - Oct 2025</time>
-                    </div>
-                    <p class="job-role">Desarrollador Full Stack</p>
-                    <p class="job-location">Guayaquil, Ecuador</p>
-                    <ul>
-                        <li>
-                            <strong>Lideré el análisis y la migración</strong> del módulo de Ahorro Programado, planificando la transición de una interfaz en React hacia Angular, alineada con las APIs en .NET.
-                        </li>
-                        <li>
-                            <strong>Analicé requerimientos funcionales</strong> complejos y los transformé en especificaciones técnicas y maquetas de arquitectura frontend y backend.
-                        </li>
-                        <li>
-                            <strong>Investigué la lógica de negocio</strong> en sistemas legados IBM AS/400 y diseñé el flujo de datos entre la banca web moderna y el core bancario, bajo estándares de alta disponibilidad y seguridad financiera.
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="job-card" data-tech="erp">
-                    <div class="job-header">
-                        <h3>Viamatica <span class="project-name">| ARCSA</span></h3>
-                        <time class="job-date" datetime="2024-05">May 2024 - Jul 2024</time>
-                    </div>
-                    <p class="job-role">Analista de Documentación y QA</p>
-                    <p class="job-location">Guayaquil, Ecuador</p>
-                    <ul>
-                        <li>
-                            <strong>Redacté documentación técnica</strong> de múltiples módulos del ERP y produje tutoriales audiovisuales para la capacitación de usuarios finales.
-                        </li>
-                        <li>
-                            <strong>Ejecuté pruebas funcionales (QA)</strong> y coordiné reuniones diarias con el cliente, traduciendo sus necesidades en reglas de negocio claras para el equipo técnico.
-                        </li>
-                    </ul>
+                    <ol class="positions">
+                    <li class="position" data-tech="net angular banca">
+                        <div class="position-header">
+                            <h4 class="position-role">Desarrollador Full Stack</h4>
+                            <time class="position-date" datetime="2024-11">Nov 2024 - Dic 2025</time>
+                        </div>
+                        <p class="position-client">Intecav <span class="position-note">· Bolsa de Valores de Guayaquil</span></p>
+                        <ul class="position-bullets">
+                                <li><strong>Desarrollé y mantuve</strong> aplicaciones empresariales para la Bolsa de Valores de Guayaquil con C# en el backend y Angular 14 (TypeScript, Angular Material, Tailwind CSS) en el frontend, garantizando interfaces eficientes y escalables.</li>
+                                <li><strong>Optimicé consultas complejas</strong> en SQL Server mediante Stored Procedures y diseñé reportes especializados con RDLC, reduciendo tiempos de respuesta y dando soporte a incidencias críticas.</li>
+                                <li><strong>Lideré técnicamente al equipo</strong> brindando orientación funcional, arquitectónica y metodológica, y supervisé la calidad del código mediante code review y aprobación de Merge Requests en GitLab.</li>
+                                <li><strong>Diseñé el marco de trabajo</strong> para la integración y promoción de cambios (Git Flow, versionado y CI/CD) y gestioné el despliegue de versiones en producción con IIS.</li>
+                        </ul>
+                    </li>
+                    <li class="position" data-tech="net angular react banca">
+                        <div class="position-header">
+                            <h4 class="position-role">Desarrollador Full Stack</h4>
+                            <time class="position-date" datetime="2025-09">Sep 2025 - Oct 2025</time>
+                        </div>
+                        <p class="position-client">Banco Machala <span class="position-note">· Módulo de Ahorro Programado</span></p>
+                        <ul class="position-bullets">
+                                <li><strong>Lideré el análisis y la migración</strong> del módulo de Ahorro Programado, planificando la transición de una interfaz en React hacia Angular, alineada con las APIs en .NET.</li>
+                                <li><strong>Analicé requerimientos funcionales</strong> complejos y los transformé en especificaciones técnicas y maquetas de arquitectura frontend y backend.</li>
+                                <li><strong>Investigué la lógica de negocio</strong> en sistemas legados IBM AS/400 y diseñé el flujo de datos entre la banca web moderna y el core bancario, bajo estándares de alta disponibilidad y seguridad financiera.</li>
+                        </ul>
+                    </li>
+                    <li class="position" data-tech="erp">
+                        <div class="position-header">
+                            <h4 class="position-role">Analista de Documentación y QA</h4>
+                            <time class="position-date" datetime="2024-05">May 2024 - Jul 2024</time>
+                        </div>
+                        <p class="position-client">ARCSA <span class="position-note">· ERP regulatorio</span></p>
+                        <ul class="position-bullets">
+                                <li><strong>Redacté documentación técnica</strong> de múltiples módulos del ERP y produje tutoriales audiovisuales para la capacitación de usuarios finales.</li>
+                                <li><strong>Ejecuté pruebas funcionales (QA)</strong> y coordiné reuniones diarias con el cliente, traduciendo sus necesidades en reglas de negocio claras para el equipo técnico.</li>
+                        </ul>
+                    </li>
+                    </ol>
                 </article>
             </section>
         </div>

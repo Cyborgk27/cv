@@ -59,9 +59,9 @@ function initScrollReveal() {
    ========================================================================== */
 function initJobFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const jobCards = document.querySelectorAll('.job-card');
-    
-    if (filterButtons.length === 0) return;
+    const blocks = document.querySelectorAll('.company-block');
+
+    if (filterButtons.length === 0 || blocks.length === 0) return;
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -71,12 +71,20 @@ function initJobFilter() {
 
             const selectedFilter = button.getAttribute('data-filter');
 
-            // Control de visibilidad delegando transiciones e interpolación al motor CSS
-            jobCards.forEach(card => {
-                const cardTechnologies = card.getAttribute('data-tech') || '';
-                const matchesFilter = selectedFilter === 'all' || cardTechnologies.toLowerCase().includes(selectedFilter);
+            // Se filtra a nivel de cargo y se oculta el empleador si no queda ninguno visible
+            blocks.forEach(block => {
+                const positions = block.querySelectorAll('.position');
+                let visible = 0;
 
-                card.classList.toggle('is-hidden', !matchesFilter);
+                positions.forEach(position => {
+                    const positionTech = (position.getAttribute('data-tech') || '').toLowerCase();
+                    const matchesFilter =
+                        selectedFilter === 'all' || positionTech.includes(selectedFilter);
+                    position.classList.toggle('is-hidden', !matchesFilter);
+                    if (matchesFilter) visible++;
+                });
+
+                block.classList.toggle('is-hidden', visible === 0);
             });
         });
     });
