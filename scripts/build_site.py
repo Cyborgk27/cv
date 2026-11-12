@@ -100,6 +100,7 @@ def render_actions(cv: dict, pdf_href: str) -> str:
     items = [
         (icon("code"), "GitHub", person["links"]["github"], True),
         (icon("work"), "LinkedIn", person["links"]["linkedin"], True),
+        (icon("chat"), "WhatsApp", f'https://wa.me/{person["whatsapp"]}', True),
         (icon("mail"), "Email", f'mailto:{person["email"]}', False),
         (icon("download"), "PDF", pdf_href, False),
     ]
@@ -271,6 +272,7 @@ def build_jsonld(cv: dict, site_url: str) -> str:
         "url": site_url,
         "image": f"{site_url}assets/og/og-image.png",
         "email": f'mailto:{person["email"]}',
+        "telephone": person["phone_raw"],
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Guayaquil",

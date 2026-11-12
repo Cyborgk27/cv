@@ -46,7 +46,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" />
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&icon_names=api,arrow_outward,check_circle,cloud_sync,code,dark_mode,dashboard,data_object,database,deployed_code,dns,download,folder_special,gpp_maybe,hub,layers,light_mode,mail,memory,merge,monitoring,open_in_new,palette,query_stats,school,security,shield,storage,sync,terminal,timeline,translate,web,widgets,work,workspace_premium&display=block" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&icon_names=api,arrow_outward,chat,check_circle,cloud_sync,code,dark_mode,dashboard,data_object,database,deployed_code,dns,download,folder_special,gpp_maybe,hub,layers,light_mode,mail,memory,merge,monitoring,open_in_new,palette,query_stats,school,security,shield,storage,sync,terminal,timeline,translate,web,widgets,work,workspace_premium&display=block" />
 
     <link rel="stylesheet" href="css/styles.css" />
 

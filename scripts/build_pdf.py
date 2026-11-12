@@ -153,6 +153,27 @@ def render_skills(skills: dict, languages: list[dict]) -> str:
     return "".join(out)
 
 
+def render_contact(cv: dict) -> str:
+    person = cv["person"]
+    link = (
+        '<text:a xlink:type="simple" xlink:href="{}" '
+        'text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link">{}</text:a>'
+    )
+    whatsapp = link.format(
+        f'https://wa.me/{esc(person["whatsapp"])}',
+        f'{esc(person["phone"])} (WhatsApp)',
+    )
+    linkedin = link.format(
+        esc(person["links"]["linkedin"]),
+        '<text:span text:style-name="T1">LinkedIn</text:span>',
+    )
+    return (
+        '<text:p text:style-name="P2">'
+        f'{esc(person["location"])} | {whatsapp} | {esc(person["email"])} | {linkedin}'
+        "</text:p>"
+    )
+
+
 def render_certifications(items: list[dict]) -> str:
     parts = []
     for idx, cert in enumerate(items):
@@ -228,6 +249,7 @@ def build(lang: str = "es", make_pdf: bool = True) -> dict[str, str]:
     with zipfile.ZipFile(TEMPLATE) as zin:
         xml = zin.read("content.xml").decode("utf-8")
 
+    xml = replace_region(xml, "CONTACT", render_contact(cv))
     xml = replace_region(xml, "PROFILE", f'<text:p text:style-name="P2">{esc(cv["profile"])}</text:p>')
     xml = replace_region(xml, "EXPERIENCE", render_experience(cv["experience"]))
     xml = replace_region(
